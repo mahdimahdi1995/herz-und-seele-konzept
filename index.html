@@ -65,6 +65,30 @@ a{color:var(--heart);text-underline-offset:3px}
 .btn-ghost{background:transparent;color:var(--heart);box-shadow:inset 0 0 0 2px var(--heart)}
 .btn-ghost:hover{background:var(--heart-tint)}
 .btn-paper{background:#fff;color:var(--soul)}
+.btn-wa{background:var(--soul);color:#fff}
+.btn-wa:hover{background:#33584A}
+.wam-wrap{display:flex;flex-direction:column;align-items:center;margin:1.4rem 0 .3rem}
+.wam-phone{width:100%;max-width:340px;border-radius:24px;overflow:hidden;border:5px solid var(--ink);box-shadow:0 14px 30px rgba(54,35,40,.18);background:#EFE7DE}
+.wam-head{display:flex;align-items:center;gap:.55rem;background:#008069;color:#fff;padding:.6rem .7rem}
+.wam-head .back{width:18px;height:18px;flex:none}
+.wam-ava{flex:none;width:34px;height:34px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--heart)}
+.wam-ava svg{width:19px;height:19px}
+.wam-id{min-width:0;line-height:1.15}
+.wam-id strong{display:block;font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wam-id small{font-size:.68rem;opacity:.85}
+.wam-chat{padding:.75rem .65rem .6rem;display:flex;flex-direction:column;gap:.45rem;font-size:.85rem;color:#111B21}
+.wam-note{align-self:center;text-align:center;background:#FCF4CB;color:#54656F;font-size:.67rem;line-height:1.35;padding:.4rem .6rem;border-radius:8px;max-width:94%}
+.wam-msg{max-width:86%;padding:.45rem .55rem .25rem;border-radius:10px;box-shadow:0 1px 1px rgba(0,0,0,.08);line-height:1.4}
+.wam-in{align-self:flex-start;background:#fff;border-top-left-radius:3px}
+.wam-out{align-self:flex-end;background:#D9FDD3;border-top-right-radius:3px}
+.wam-meta{display:flex;justify-content:flex-end;align-items:center;gap:.3rem;font-size:.61rem;color:#8696A0;margin-top:.2rem}
+.wam-tag{font-weight:700;font-size:.58rem;letter-spacing:.02em;background:var(--soul-tint);color:var(--soul);border-radius:4px;padding:.05rem .3rem}
+.wam-ticks{color:#53BDEB;letter-spacing:-2px}
+.wam-bar{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;background:#F0F2F5}
+.wam-field{flex:1;background:#fff;border-radius:999px;padding:.45rem .8rem;font-size:.8rem;color:#8696A0}
+.wam-mic{flex:none;width:38px;height:38px;border-radius:50%;background:#008069;display:flex;align-items:center;justify-content:center;color:#fff}
+.wam-mic svg{width:17px;height:17px}
+.wam-cap{margin-top:.7rem;text-align:center;max-width:420px}
 .btn-paper:hover{background:var(--soul-tint)}
 .linkish{background:none;border:none;color:var(--heart);font:700 .95rem var(--font-body);cursor:pointer;padding:0}
 .linkish:hover{text-decoration:underline}
@@ -89,9 +113,16 @@ a{color:var(--heart);text-underline-offset:3px}
 .header-call{padding:.62em 1.05em;font-size:.94rem}
 .menu-btn{display:none;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:.45em .6em;cursor:pointer;color:var(--ink)}
 .menu-btn svg{width:20px;height:20px}
-.mobile-nav{display:none;flex-direction:column;gap:.15rem;padding:.5rem 20px 1rem;border-top:1px solid var(--line);background:var(--paper)}
-.mobile-nav.open{display:flex}
-.mobile-nav .navlink{text-align:left;padding:.7em .9em;font-size:1.05rem}
+.mobile-nav{display:none;flex-direction:column;gap:.2rem;padding:.7rem 16px 1rem;background:var(--card);border-top:1px solid var(--line);border-bottom:2px solid var(--heart);border-radius:0 0 18px 18px;box-shadow:0 16px 34px rgba(40,24,29,.26),0 2px 6px rgba(40,24,29,.1)}
+.mobile-nav.open{display:flex;animation:navDrop .22s ease}
+@keyframes navDrop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.mobile-nav .navlink{text-align:left;padding:.75em .9em;font-size:1.05rem;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+.mobile-nav .navlink.active{background:var(--heart);border-color:var(--heart);color:#fff}
+.nav-tour{color:var(--soul);font-weight:700}
+.mobile-nav .nav-tour{background:var(--soul-tint);border-color:var(--soul);color:var(--soul)}
+.nav-scrim{display:none;position:fixed;inset:0;background:rgba(40,24,29,.4);z-index:40}
+.nav-scrim.show{display:block}
+@media (prefers-reduced-motion:reduce){.mobile-nav.open{animation:none}}
 
 /* Pages */
 .page[hidden]{display:none}
@@ -222,6 +253,37 @@ form.hidden{display:none}
 .msg{max-width:86%;padding:.65em .95em;border-radius:16px;font-size:.94rem;line-height:1.5;white-space:pre-wrap;overflow-wrap:break-word}
 .msg.user{align-self:flex-end;background:var(--heart);color:#fff;border-bottom-right-radius:6px}
 .msg.bot{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:6px}
+/* ----- Gefuehrte Tour (nur Konzeptphase) ----- */
+.concept-pill{border:none;cursor:pointer;font-family:var(--font-body)}
+.tour-backdrop{position:fixed;inset:0;background:rgba(40,24,29,.62);z-index:110;opacity:0;transition:opacity .3s ease}
+.tour-backdrop.show{opacity:1}
+body.touring .tour-backdrop{background:rgba(40,24,29,.5)}
+body.touring .site-header{z-index:116}
+.tour-spot{position:relative;z-index:115;outline:3px solid var(--heart);outline-offset:6px;border-radius:14px;box-shadow:0 0 0 14px var(--paper);animation:tourPulse 1.8s ease-in-out infinite}
+@keyframes tourPulse{0%,100%{outline-color:var(--heart)}50%{outline-color:rgba(142,47,68,.35)}}
+.tour-invite,.tour-card{position:fixed;z-index:120;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 44px rgba(40,24,29,.34);width:calc(100% - 2rem);max-width:420px}
+.tour-invite{top:50%;left:50%;transform:translate(-50%,-50%) scale(.94);opacity:0;transition:opacity .28s ease,transform .28s ease;padding:1.6rem 1.4rem 1.35rem;text-align:center}
+.tour-invite.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.tour-invite .tour-mark{width:52px;height:52px;margin:0 auto .8rem;border-radius:50%;background:var(--heart-tint);color:var(--heart);display:flex;align-items:center;justify-content:center}
+.tour-invite .tour-mark svg{width:26px;height:26px}
+.tour-invite h3{margin:0 0 .4rem;font:600 1.2rem var(--font-display);color:var(--ink)}
+.tour-invite p{margin:0 0 1.1rem;font-size:.95rem;line-height:1.5;color:var(--ink-soft)}
+.tour-invite .btn{width:100%;justify-content:center;padding:.62em 1em;font-size:.95rem}
+.tour-invite .tour-skip{display:block;margin:.75rem auto 0}
+.tour-card{bottom:1rem;left:50%;transform:translateX(-50%);padding:1.05rem 1.15rem 1.1rem}
+@media (prefers-reduced-motion:reduce){.tour-invite{transition:none}}
+.tour-top{display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem}
+.tour-count{font:700 .72rem var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--soul)}
+.tour-x{margin-left:auto;border:none;background:none;padding:.25rem;cursor:pointer;color:var(--ink-soft);line-height:0}
+.tour-x svg{width:20px;height:20px}
+.tour-card h3{margin:0 0 .25rem;font:600 1.12rem var(--font-display);color:var(--ink)}
+.tour-card p{margin:0;color:var(--ink-soft);font-size:.94rem;line-height:1.5}
+.tour-nav{display:flex;align-items:center;gap:.5rem;margin-top:.9rem}
+.tour-nav .btn{padding:.55em 1.1em;font-size:.9rem}
+.tour-skip{margin-left:auto;border:none;background:none;font:500 .86rem var(--font-body);color:var(--ink-soft);text-decoration:underline;cursor:pointer;padding:.4rem}
+body.touring .callbar,body.touring #chatFab{display:none}
+@media (prefers-reduced-motion:reduce){.tour-spot{animation:none}}
+.msg.info{align-self:center;background:var(--paper2);color:var(--ink-soft);font-size:.78rem;text-align:center;max-width:94%;padding:.5em .85em;border-radius:12px}
 .dots{display:inline-flex;gap:4px;padding:.2em 0}
 .dots i{width:6px;height:6px;border-radius:50%;background:var(--ink2);animation:blink 1.2s infinite}
 .dots i:nth-child(2){animation-delay:.2s}
@@ -283,14 +345,16 @@ form.hidden{display:none}
       <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
       <span class="brand-text">Ambulanter Pflegedienst<strong>mit Herz und Seele</strong></span>
     </button>
-    <span class="concept-pill">Konzept</span>
+    <button class="concept-pill" id="tourStart" title="Geführte Tour durch die Neuerungen">Konzept</button>
     <nav class="site-nav" aria-label="Hauptnavigation">
       <button class="navlink active" data-goto="start">Start</button>
       <button class="navlink" data-goto="leistungen">Leistungen</button>
       <button class="navlink" data-goto="ueber">Über uns</button>
       <button class="navlink" data-goto="jobs">Jobs</button>
       <button class="navlink" data-goto="ratgeber">Ratgeber</button>
+      <button class="navlink" data-goto="lotse">Pflege-Lotse</button>
       <button class="navlink" data-goto="kontakt">Kontakt</button>
+      <button class="navlink nav-tour" id="tourStartNav">Tour</button>
     </nav>
     <div class="header-actions">
       <button class="textsize" id="textSizeBtn" aria-pressed="false" title="Größere Schrift ein- und ausschalten">A<span>A</span></button>
@@ -304,9 +368,12 @@ form.hidden{display:none}
     <button class="navlink" data-goto="ueber">Über uns</button>
     <button class="navlink" data-goto="jobs">Jobs</button>
     <button class="navlink" data-goto="ratgeber">Ratgeber</button>
+    <button class="navlink" data-goto="lotse">Pflege-Lotse</button>
     <button class="navlink" data-goto="kontakt">Kontakt</button>
+    <button class="navlink nav-tour" id="tourStartNavMobile">Geführte Tour starten</button>
   </div>
 </header>
+<div class="nav-scrim" id="navScrim"></div>
 
 <main id="main">
 
@@ -333,9 +400,10 @@ form.hidden{display:none}
         <li><i>♥</i>Abrechnung direkt mit den Kassen</li>
       </ul>
     </div>
-    <aside class="hero-card">
+    <aside class="hero-card" data-tour="tel">
       <h2>Sprechen Sie mit uns</h2>
       <a class="big-tel" href="tel:+4928322482">02832 2482</a>
+      <a class="btn btn-wa" style="margin:.2rem 0 .9rem" href="https://wa.me/4928322482?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Pflegeleistungen." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Per WhatsApp schreiben</a>
       <ul class="info-list">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Bürozeiten: Montag bis Freitag, 8 bis 16 Uhr</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Für unsere Patienten: Rufbereitschaft rund um die Uhr</span></li>
@@ -432,7 +500,7 @@ form.hidden{display:none}
           <li>Unterstützung beim Aufstehen, Gehen und Lagern</li>
           <li>Hilfe beim Essen und Trinken</li>
         </ul>
-        <div class="kosten"><strong>Wer zahlt?</strong> Bei anerkanntem Pflegegrad rechnen wir direkt mit Ihrer Pflegekasse ab. Einen möglichen Eigenanteil besprechen wir offen im Erstgespräch.</div>
+        <div class="kosten" data-tour="kosten"><strong>Wer zahlt?</strong> Bei anerkanntem Pflegegrad rechnen wir direkt mit Ihrer Pflegekasse ab. Einen möglichen Eigenanteil besprechen wir offen im Erstgespräch.</div>
       </div>
 
       <div class="card">
@@ -523,7 +591,7 @@ form.hidden{display:none}
     <div class="wrap">
       <p class="eyebrow">Das Team</p>
       <h2>Diese Menschen kommen zu Ihnen</h2>
-      <div class="team">
+      <div class="team" data-tour="team">
         <div class="tm"><div class="avatar"><img src="https://herz-und-seele.org/.cm4all/uproc.php/0/.IMG_3685%20-%20Kopie.jpeg/picture-200?_=1905acc508e" alt="Nicole Rogmann-Brune" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">NR</div><strong>Nicole Rogmann-Brune</strong><span>Geschäftsführung, Pflegedienstleitung, Wundexpertin ICW</span></div>
         <div class="tm"><div class="avatar"><img src="https://herz-und-seele.org/.cm4all/uproc.php/0/.IMG_3665%20(1)%20-%20Kopie.JPG/picture-200?_=191d1de8bdf" alt="Iris Besems" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">IB</div><strong>Iris Besems</strong><span>Stellv. Pflegedienstleitung, Wundexpertin ICW</span></div>
         <div class="tm"><div class="avatar"><img src="https://herz-und-seele.org/.cm4all/uproc.php/0/.12.jpg/picture-200?_=1905ac8a141" alt="Silvia Sauer" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">SS</div><strong>Silvia Sauer</strong><span>Verwaltung, Kauffrau im Gesundheitswesen</span></div>
@@ -562,7 +630,7 @@ form.hidden{display:none}
       <div class="card"><h3>Initiativbewerbung</h3><p class="small muted">Jederzeit willkommen</p><p>Sie passen zu uns, aber keine Stelle passt gerade? Schreiben Sie uns trotzdem.</p></div>
     </div>
 
-    <div class="card" style="margin-top:2.2rem">
+    <div class="card" style="margin-top:2.2rem" data-tour="bewerbung">
       <h2 style="font-size:1.4rem">Schnellbewerbung</h2>
       <p class="muted">Ohne Anschreiben, ohne Lebenslauf-Pflicht. Wir melden uns telefonisch bei Ihnen.</p>
       <form data-demo-form novalidate style="margin-top:1.1rem">
@@ -588,7 +656,7 @@ form.hidden{display:none}
     <h1>Erste Schritte in der Pflege</h1>
     <p class="lead">Wenn Pflege plötzlich Thema wird, ist vieles neu. Hier finden Sie Orientierung in einfacher Sprache.</p>
 
-    <div class="card" style="margin-top:1.8rem">
+    <div class="card" style="margin-top:1.8rem" data-tour="wegweiser">
       <p class="eyebrow" style="color:var(--heart)">Pflegegrad-Wegweiser</p>
       <p class="wiz-q">Gibt es bereits einen anerkannten Pflegegrad?</p>
       <div class="wiz-opts">
@@ -642,8 +710,9 @@ form.hidden{display:none}
 
     <div class="card" style="margin-top:2.2rem;background:var(--soul-tint);border-color:var(--soul)">
       <h3>Noch Fragen?</h3>
-      <p>Unser Pflege-Lotse hilft weiter: ein KI-Assistent, der allgemeine Fragen beantwortet und Sie zum richtigen Ansprechpartner führt. Er trifft keine Entscheidungen und ersetzt keine Beratung.</p>
-      <button class="btn btn-heart" style="margin-top:.8rem" data-open-chat>Pflege-Lotse öffnen</button>
+      <p>Unser Pflege-Lotse hilft weiter: ein KI-Assistent, der allgemeine Fragen beantwortet und Sie zum richtigen Ansprechpartner führt. Er trifft keine Entscheidungen und ersetzt keine Beratung. Im Konzept ist er auch über WhatsApp erreichbar.</p>
+      <div class="hero-cta" style="margin-top:.8rem"><button class="btn btn-heart" data-open-chat>Pflege-Lotse öffnen</button><a class="btn btn-wa" href="https://wa.me/4928322482?text=Guten%20Tag%2C%20ich%20habe%20eine%20Frage%20zur%20Pflege." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Auf WhatsApp fragen</a></div>
+      <p style="margin-top:.7rem"><button class="linkish" data-goto="lotse">Alle Möglichkeiten und Grenzen des Lotsen ›</button></p>
     </div>
   </div>
 </section>
@@ -686,7 +755,7 @@ form.hidden{display:none}
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Bahnhofstr. 32, 47625 Kevelaer</span></li>
           </ul>
         </div>
-        <div class="map-card" style="margin-top:1.1rem" id="mapCard">
+        <div class="map-card" style="margin-top:1.1rem" id="mapCard" data-tour="karte">
           <div class="map-inner" id="mapConsent">
             <div class="map-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <p style="margin:0 0 .8rem"><strong>Karte anzeigen?</strong><br><span class="small muted">Erst nach Ihrem Klick werden externe Kartendaten geladen. So schützen wir Ihre Daten.</span></p>
@@ -699,6 +768,85 @@ form.hidden{display:none}
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="card" style="margin-top:1.4rem;border-color:var(--soul)">
+      <p class="eyebrow" style="color:var(--soul)">Rund um die Uhr</p>
+      <h2 style="font-size:1.35rem">Lieber schreiben statt anrufen?</h2>
+      <p>Der Pflege-Lotse beantwortet allgemeine Fragen sofort, hier auf der Website oder per WhatsApp. Sobald es persönlich wird, übernimmt das Team.</p>
+      <div class="hero-cta" style="margin-top:.9rem"><button class="btn btn-heart" data-open-chat>Pflege-Lotse öffnen</button><a class="btn btn-wa" href="https://wa.me/4928322482?text=Guten%20Tag%2C%20ich%20habe%20eine%20Frage%20zur%20Pflege." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp starten</a></div>
+      <p style="margin-top:.8rem"><button class="linkish" data-goto="lotse">Mehr über den Pflege-Lotsen, seine Möglichkeiten und Grenzen ›</button></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PFLEGE-LOTSE ===================== -->
+<section class="page" id="page-lotse" hidden>
+  <div class="wrap sec">
+    <p class="eyebrow">Pflege-Lotse</p>
+    <h1>Ein KI-Assistent, der hilft und nicht entscheidet</h1>
+    <p class="lead">Der Pflege-Lotse beantwortet allgemeine Fragen zu Pflege, Kosten, Pflegegrad und Bewerbung, rund um die Uhr und in einfacher Sprache. Jede Antwort ist klar als KI gekennzeichnet, und er führt Sie immer zum richtigen Menschen im Team.</p>
+
+    <div class="hero-cta" style="margin-top:1.4rem">
+      <button class="btn btn-heart" data-open-chat>Jetzt ausprobieren</button>
+      <a class="btn btn-wa" href="https://wa.me/4928322482?text=Guten%20Tag%2C%20ich%20habe%20eine%20Frage%20zur%20Pflege." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Auf WhatsApp starten</a>
+    </div>
+    <p class="small muted" style="margin-top:.7rem">Konzept-Hinweis: Der WhatsApp-Button öffnet hier nur einen normalen Chat, die Nummer ist ein Platzhalter. Die echte KI-Anbindung läuft später über die WhatsApp Business Plattform.</p>
+
+    <div class="grid cols-2" style="margin-top:2rem" data-tour="grenzen">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h3>Was er kann</h3>
+        <ul class="list-check">
+          <li>Allgemeine Fragen zu Leistungen und Kostenübernahme beantworten</li>
+          <li>Den Weg zum Pflegegrad Schritt für Schritt erklären</li>
+          <li>Bewerberinnen und Bewerbern die offenen Stellen zeigen</li>
+          <li>Zum passenden Kontaktweg führen: Telefon, Formular oder Rückruf</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon soul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Was er bewusst nicht macht</h3>
+        <ul class="list-check">
+          <li>Keine medizinischen oder pflegerischen Einschätzungen, keine Diagnosen</li>
+          <li>Keine verbindlichen Zusagen zu Kosten, Terminen oder Kapazitäten</li>
+          <li>Keine Abfrage oder Speicherung von Gesundheitsdaten</li>
+          <li>Bei persönlichen Anliegen übergibt er ans Team, im Notfall verweist er auf die 112</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 style="margin-top:2.6rem">Auch auf WhatsApp</h2>
+    <p class="lead" style="font-size:1.05rem">Viele Angehörige schreiben lieber, als ein Formular auszufüllen. Deshalb ist der Pflege-Lotse im Konzept auch über WhatsApp erreichbar, mit denselben Regeln. So könnte ein Gespräch aussehen:</p>
+
+      <div class="wam-wrap" data-tour="whatsapp">
+        <div class="wam-phone">
+          <div class="wam-head">
+            <svg class="back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            <span class="wam-ava"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+            <div class="wam-id"><strong>Pflegedienst mit Herz und Seele</strong><small>Pflege-Lotse · KI-Assistent</small></div>
+          </div>
+          <div class="wam-chat">
+            <div class="wam-note">Dieser Chat nutzt einen KI-Assistenten. Antworten der KI sind gekennzeichnet. Bitte keine Gesundheitsdaten senden.</div>
+            <div class="wam-msg wam-in">Guten Tag! 👋 Hier ist der Pflege-Lotse vom Pflegedienst mit Herz und Seele. Ich bin ein KI-Assistent und beantworte allgemeine Fragen zu Pflege, Kosten und Bewerbung. Wie kann ich helfen?<div class="wam-meta"><span class="wam-tag">KI</span><span>10:02</span></div></div>
+            <div class="wam-msg wam-out">Hallo, meine Mutter braucht bald Hilfe zuhause. Wer bezahlt das eigentlich?<div class="wam-meta"><span>10:03</span><span class="wam-ticks">✓✓</span></div></div>
+            <div class="wam-msg wam-in">Das hängt von der Leistung ab. Unterstützung im Alltag übernimmt bei anerkanntem Pflegegrad die Pflegekasse, medizinische Pflege auf ärztliche Verordnung die Krankenkasse. Genaue Beträge klärt das Team im unverbindlichen Erstgespräch. Gibt es schon einen Pflegegrad?<div class="wam-meta"><span class="wam-tag">KI</span><span>10:03</span></div></div>
+            <div class="wam-msg wam-out">Ja, Pflegegrad 3. Sie hat auch eine Wunde am Bein, die nicht heilt. Was sollen wir da machen?<div class="wam-meta"><span>10:05</span><span class="wam-ticks">✓✓</span></div></div>
+            <div class="wam-msg wam-in">Zu Wunden darf ich als KI nichts einschätzen, das gehört in fachliche Hände. Unsere zertifizierten Wundexpertinnen übernehmen die Versorgung auf ärztliche Verordnung. Rufen Sie das Team gern direkt an: 02832 2482, Montag bis Freitag 8 bis 16 Uhr. Oder soll ich einen Rückruf notieren?<div class="wam-meta"><span class="wam-tag">KI</span><span>10:05</span></div></div>
+            <div class="wam-msg wam-out">Ja gerne, bitte um Rückruf.<div class="wam-meta"><span>10:06</span><span class="wam-ticks">✓✓</span></div></div>
+            <div class="wam-msg wam-in">Erledigt! Das Team meldet sich am nächsten Werktag bei Ihnen. Wenn es eilt, rufen Sie bitte direkt an. Bei Notfällen wählen Sie die 112. Alles Gute für Ihre Mutter! 💚<div class="wam-meta"><span class="wam-tag">KI</span><span>10:06</span></div></div>
+          </div>
+          <div class="wam-bar">
+            <span class="wam-field">Nachricht</span>
+            <span class="wam-mic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></span>
+          </div>
+        </div>
+        <p class="small muted wam-cap">Beispiel-Mockup: So läuft ein Gespräch mit dem Pflege-Lotsen auf WhatsApp, inklusive der klaren Grenze bei Gesundheitsfragen und der Übergabe ans Team.</p>
+      </div>
+
+    <div class="card" style="margin-top:1.6rem;background:var(--soul-tint);border-color:var(--soul)">
+      <h3>Transparenz und Datenschutz</h3>
+      <p>In der echten Umsetzung läuft der Lotse über einen eigenen, abgesicherten Server: Die Regeln gelten dort verbindlich, Gesundheitsdaten werden nicht gespeichert, und die WhatsApp-Anbindung wird vor dem Start rechtlich geprüft. Der passende Abschnitt gehört in die Datenschutzerklärung der neuen Website.</p>
     </div>
   </div>
 </section>
@@ -721,7 +869,7 @@ form.hidden{display:none}
   <div class="wrap narrow sec">
     <h1>Datenschutzerklärung</h1>
     <div class="card">
-      <p><strong>Platzhalter.</strong> Für die neue Website wird eine vollständige Datenschutzerklärung erstellt. Sie muss unter anderem abdecken: Hosting, Kontaktformular, Schnellbewerbung, den KI-Assistenten und die Karteneinbindung.</p>
+      <p><strong>Platzhalter.</strong> Für die neue Website wird eine vollständige Datenschutzerklärung erstellt. Sie muss unter anderem abdecken: Hosting, Kontaktformular, Schnellbewerbung, den KI-Assistenten, die WhatsApp-Anbindung und die Karteneinbindung.</p>
       <p class="muted">Hinweis zur bestehenden Website: Dort ist aktuell keine Datenschutzerklärung auffindbar. Das sollte unabhängig vom Relaunch zeitnah geklärt werden.</p>
     </div>
   </div>
@@ -738,6 +886,7 @@ form.hidden{display:none}
           <li>Bahnhofstr. 32, 47625 Kevelaer</li>
           <li><a href="tel:+4928322482">02832 2482</a></li>
           <li><a href="mailto:info@herz-und-seele.org">info@herz-und-seele.org</a></li>
+          <li><a href="https://wa.me/4928322482?text=Guten%20Tag%2C%20ich%20habe%20eine%20Frage%20zur%20Pflege." target="_blank" rel="noopener">WhatsApp (Konzept)</a></li>
         </ul>
       </div>
       <div class="foot">
@@ -747,6 +896,7 @@ form.hidden{display:none}
           <li><button class="flink" data-goto="ueber">Über uns</button></li>
           <li><button class="flink" data-goto="jobs">Jobs</button></li>
           <li><button class="flink" data-goto="ratgeber">Ratgeber</button></li>
+          <li><button class="flink" data-goto="lotse">Pflege-Lotse</button></li>
           <li><button class="flink" data-goto="kontakt">Kontakt</button></li>
         </ul>
       </div>
@@ -804,6 +954,7 @@ form.hidden{display:none}
     $$('.page').forEach(function(p){p.hidden=(p.id!=='page-'+id)});
     $$('.navlink[data-goto]').forEach(function(b){b.classList.toggle('active',b.dataset.goto===id)});
     var mn=$('#mobileNav'); mn.classList.remove('open');
+    var sc=$('#navScrim'); if(sc){sc.classList.remove('show');}
     $('#menuBtn').setAttribute('aria-expanded','false');
     window.scrollTo(0,0);
   }
@@ -815,11 +966,18 @@ form.hidden{display:none}
   });
 
   /* ---------- Mobile menu ---------- */
+  function closeMenu(){
+    $('#mobileNav').classList.remove('open');
+    $('#navScrim').classList.remove('show');
+    $('#menuBtn').setAttribute('aria-expanded','false');
+  }
   $('#menuBtn').addEventListener('click',function(){
     var mn=$('#mobileNav');
     var open=mn.classList.toggle('open');
+    $('#navScrim').classList.toggle('show',open);
     this.setAttribute('aria-expanded',open?'true':'false');
   });
+  $('#navScrim').addEventListener('click',closeMenu);
 
   /* ---------- Text size ---------- */
   $('#textSizeBtn').addEventListener('click',function(){
@@ -880,21 +1038,77 @@ form.hidden{display:none}
     '- Ablauf: 1. anrufen oder Kontaktformular nutzen, 2. unverbindliches Erstgespraech zuhause, 3. der Pflegedienst unterstuetzt bei Verordnungen und Antraegen und startet die Versorgung.',
     '- Kosten: Grundpflege wird bei anerkanntem Pflegegrad direkt mit der Pflegekasse abgerechnet, Behandlungspflege mit der Krankenkasse. Genaue Betraege und Eigenanteile werden im Erstgespraech geklaert, nenne keine konkreten Eurobetraege.',
     '- Pflegegrad: Antrag bei der Pflegekasse der Krankenkasse, danach Begutachtung durch den Medizinischen Dienst zuhause. Das Team hilft beim Antrag.',
+    '- WhatsApp: Im Konzept ist der Pflege-Lotse auch ueber WhatsApp erreichbar, mit denselben Regeln. Persoenliche oder gesundheitliche Details gehoeren nicht in WhatsApp, sondern ans Telefon: 02832 2482.',
     '- Jobs: gesucht werden Pflegefachkraefte mit 3-jaehrigem Examen in Teilzeit sowie auf Minijob-Basis fuer Wochenendtouren. Initiativbewerbungen sind willkommen. Bewerbung ueber die Schnellbewerbung auf der Jobs-Seite oder an info@herz-und-seele.org.',
     '',
     'Wenn du etwas nicht weisst, sage das ehrlich und verweise an das Team.'
   ].join('\n');
 
   var GREETING='Guten Tag! Ich bin der Pflege-Lotse, ein KI-Assistent (Demo). Ich beantworte allgemeine Fragen zu Pflege, Kosten und Bewerbung. Ich entscheide nichts und ersetze keine Beratung, dafür ist unser Team da. Was möchten Sie wissen?';
-  var FALLBACK='Der Pflege-Lotse ist gerade nicht erreichbar. Rufen Sie uns gern direkt an: 02832 2482.';
+  var DEMO_NOTE='Hinweis: In dieser Vorschau antwortet der Lotse mit vorbereiteten Beispielantworten. In der fertigen Website antwortet hier echte KI mit denselben Leitplanken.';
+  var demoMode=false;
+
+  function demoReply(q){
+    q=(q||'').toLowerCase();
+    function has(){for(var i=0;i<arguments.length;i++){if(q.indexOf(arguments[i])>-1){return true;}}return false;}
+    if(has('notfall','notarzt','112','dringend','sofort hilfe')){
+      return 'Bei einem medizinischen Notfall wählen Sie bitte sofort die 112. Für alles andere erreichen Sie unser Team unter 02832 2482.';
+    }
+    if(has('wunde','schmerz','krank','symptom','diagnose','fieber','sturz','gestürzt','verwirrt','medikament vergessen')){
+      return 'Zu gesundheitlichen Fragen darf ich als Assistent nichts einschätzen, das gehört in fachliche Hände. Bitte rufen Sie unser Team an: 02832 2482, Montag bis Freitag 8 bis 16 Uhr. In Notfällen wählen Sie bitte die 112.';
+    }
+    if(has('whatsapp')){
+      return 'Im Konzept ist der Pflege-Lotse auch über WhatsApp geplant, mit denselben Regeln wie hier. Persönliche und gesundheitliche Details gehören aber ans Telefon: 02832 2482.';
+    }
+    if(has('kost','bezahl','zahlt','preis','geld','eigenanteil','abrechn')){
+      return 'Das hängt von der Leistung ab. Grundpflege übernimmt bei anerkanntem Pflegegrad die Pflegekasse, Behandlungspflege läuft auf ärztliche Verordnung über die Krankenkasse. Genaue Beträge und einen möglichen Eigenanteil klärt das Team offen im unverbindlichen Erstgespräch: 02832 2482.';
+    }
+    if(has('pflegegrad','antrag','beantrag','einstuf','begutacht','medizinischer dienst')){
+      return 'Den Pflegegrad beantragen Sie bei der Pflegekasse Ihrer Krankenkasse, ein Anruf genügt für den Start. Danach kommt der Medizinische Dienst zur Begutachtung zu Ihnen nach Hause, der Bescheid kommt per Post. Unser Team unterstützt Sie beim Antrag und bereitet Sie auf den Termin vor.';
+    }
+    if(has('behandlungspflege','spritze','injektion','insulin','verband','kompression','blutdruck','blutzucker','medikament')){
+      return 'Behandlungspflege ist medizinische Pflege auf ärztliche Verordnung, zum Beispiel Medikamentengabe, Injektionen oder Wundversorgung durch unsere zertifizierten Wundexpertinnen. Abgerechnet wird in der Regel direkt mit der Krankenkasse.';
+    }
+    if(has('grundpflege','körperpflege','waschen','duschen','anziehen','alltag','essen','mobil')){
+      return 'Grundpflege ist Unterstützung im Alltag: Körperpflege, An- und Auskleiden, Bewegung, Essen und Trinken. Bei anerkanntem Pflegegrad rechnen wir direkt mit Ihrer Pflegekasse ab. Was genau passt, klären wir im unverbindlichen Erstgespräch bei Ihnen zuhause.';
+    }
+    if(has('bewerb','job','stelle','arbeit','examen','minijob','gehalt')){
+      return 'Schön, dass Sie sich für uns interessieren! Wir suchen Pflegefachkräfte mit 3-jährigem Examen in Teilzeit und für Wochenendtouren auf Minijob-Basis. Am schnellsten geht die Schnellbewerbung auf der Jobs-Seite, ganz ohne Anschreiben. Wir melden uns dann telefonisch.';
+    }
+    if(has('erreich','telefon','öffnungszeit','bürozeit','kontakt','adresse','rückruf')){
+      return 'Sie erreichen unser Team unter 02832 2482, Montag bis Freitag von 8 bis 16 Uhr, Bahnhofstr. 32 in Kevelaer. Unsere Patientinnen und Patienten erreichen die Rufbereitschaft rund um die Uhr. Oder nutzen Sie das Kontaktformular für einen Rückruf.';
+    }
+    if(has('hallo','guten tag','hi','hey','wer bist du','was kannst')){
+      return 'Guten Tag! Fragen Sie mich zum Beispiel: Wer bezahlt die Pflege? Wie beantrage ich einen Pflegegrad? Was ist Behandlungspflege? Oder: Ich möchte mich bewerben.';
+    }
+    if(has('dank')){
+      return 'Sehr gern! Wenn Sie mögen, rufen Sie das Team für alles Weitere an: 02832 2482.';
+    }
+    return 'Dazu habe ich in dieser Demo keine vorbereitete Antwort, die fertige Version antwortet an dieser Stelle frei mit KI. Am besten rufen Sie unser Team an: 02832 2482, Montag bis Freitag 8 bis 16 Uhr.';
+  }
+
+  function serveDemo(userText){
+    if(!demoMode){
+      demoMode=true;
+      var n=document.createElement('div');
+      n.className='msg info';
+      n.textContent=DEMO_NOTE;
+      msgs.appendChild(n);
+    }
+    var out=demoReply(userText);
+    hist.push({role:'assistant',content:out});
+    addMsg('bot',out);
+  }
 
   var panel=$('#chatPanel'), msgs=$('#chatMsgs'), input=$('#chatInput'), sendBtn=$('#chatSend');
   var hist=[], greeted=false, busy=false;
 
+  var isTouch=window.matchMedia&&window.matchMedia('(hover: none)').matches;
+
   function openChat(){
     panel.hidden=false;
     if(!greeted){addMsg('bot',GREETING);greeted=true;}
-    setTimeout(function(){input.focus()},60);
+    if(!isTouch){setTimeout(function(){input.focus()},60);}
   }
   $('#chatClose').addEventListener('click',function(){panel.hidden=true});
 
@@ -915,13 +1129,30 @@ form.hidden{display:none}
     return d;
   }
 
-  function send(text){
+  function send(text,keepFocus){
     text=(text||'').trim();
     if(!text||busy){return;}
     busy=true; sendBtn.disabled=true; input.value='';
+    if(!keepFocus&&document.activeElement===input){input.blur();}
     addMsg('user',text);
     hist.push({role:'user',content:text});
     var typing=addTyping();
+
+    function finishTurn(){
+      busy=false;
+      sendBtn.disabled=false;
+      if(keepFocus&&!isTouch){input.focus();}
+      msgs.scrollTop=msgs.scrollHeight;
+    }
+
+    if(demoMode){
+      setTimeout(function(){
+        typing.remove();
+        serveDemo(text);
+        finishTurn();
+      },650);
+      return;
+    }
 
     fetch('https://api.anthropic.com/v1/messages',{
       method:'POST',
@@ -938,22 +1169,165 @@ form.hidden{display:none}
         .map(function(c){return c.text}).join('\n').trim();
       typing.remove();
       if(out){hist.push({role:'assistant',content:out});addMsg('bot',out);}
-      else{addMsg('bot',FALLBACK);}
+      else{serveDemo(text);}
     }).catch(function(){
       typing.remove();
-      addMsg('bot',FALLBACK);
+      serveDemo(text);
     }).finally(function(){
-      busy=false; sendBtn.disabled=false; input.focus();
+      finishTurn();
     });
   }
 
-  sendBtn.addEventListener('click',function(){send(input.value)});
+  sendBtn.addEventListener('click',function(){send(input.value,true)});
   input.addEventListener('keydown',function(e){
-    if(e.key==='Enter'){e.preventDefault();send(input.value);}
+    if(e.key==='Enter'){e.preventDefault();send(input.value,true);}
   });
   $$('[data-chip]').forEach(function(c){
-    c.addEventListener('click',function(){send(c.textContent)});
+    c.addEventListener('click',function(){
+      if(document.activeElement&&document.activeElement.blur){document.activeElement.blur();}
+      send(c.textContent,false);
+    });
   });
+
+  /* ---------- Gefuehrte Tour (nur fuer die Konzeptphase) ---------- */
+  var TOUR=[
+    {page:'start',title:'Kurze Tour durch den Entwurf',
+     text:'In rund zwei Minuten zeige ich Ihnen, was sich gegen\u00fcber der bisherigen Website \u00e4ndert. Sie k\u00f6nnen jederzeit abbrechen und selbst weiterklicken.'},
+    {page:'start',sel:'[data-tour="tel"]',title:'Die Telefonnummer ist immer da',
+     text:'Anrufen ist der wichtigste Schritt f\u00fcr Angeh\u00f6rige. Die Nummer steht deshalb im Kopf jeder Seite, hier gro\u00df im Hero und auf dem Handy dauerhaft als Leiste am unteren Rand.'},
+    {page:'start',sel:'#textSizeBtn',title:'Gr\u00f6\u00dfere Schrift auf Knopfdruck',
+     text:'Viele Besucher sind \u00fcber 60. Ein Tippen vergr\u00f6\u00dfert die Schrift der ganzen Seite. Probieren Sie es ruhig aus.'},
+    {page:'leistungen',sel:'[data-tour="kosten"]',title:'Bei jeder Leistung steht: Wer zahlt?',
+     text:'Statt nur SGB XI und SGB V zu nennen, erkl\u00e4rt jede Leistung in einfacher Sprache, was sie umfasst und wer die Kosten tr\u00e4gt. Das ist die h\u00e4ufigste Frage \u00fcberhaupt.'},
+    {page:'ueber',sel:'[data-tour="team"]',title:'Das Team mit echten Gesichtern',
+     text:'Vier Fotos stammen aus der bisherigen Website, die \u00fcbrigen sind Platzhalter bis zum gemeinsamen Fototermin. Vertrauen entsteht \u00fcber Gesichter, nicht \u00fcber Logos.'},
+    {page:'jobs',sel:'[data-tour="bewerbung"]',title:'Bewerbung in zwei Minuten',
+     text:'Name und Telefonnummer gen\u00fcgen, ohne Anschreiben und ohne Lebenslauf-Pflicht. Das senkt die H\u00fcrde deutlich gegen\u00fcber einer reinen E-Mail-Adresse.'},
+    {page:'ratgeber',sel:'[data-tour="wegweiser"]',title:'Der Pflegegrad-Wegweiser',
+     text:'Eine Frage, dann klare n\u00e4chste Schritte. Bewusst ohne KI, rein regelbasiert, damit jede Antwort nachvollziehbar bleibt.'},
+    {page:'lotse',sel:'[data-tour="grenzen"]',title:'Der Pflege-Lotse hilft, entscheidet aber nicht',
+     text:'Links steht, wobei der Assistent unterst\u00fctzt, rechts, was er bewusst nicht tut. Keine Diagnosen, keine Zusagen, bei pers\u00f6nlichen Anliegen \u00fcbergibt er an Ihr Team.'},
+    {page:'lotse',sel:'[data-tour="whatsapp"]',title:'Derselbe Assistent auf WhatsApp',
+     text:'Viele Angeh\u00f6rige schreiben lieber, als anzurufen. Das Beispiel zeigt auch die Grenze: Bei der Wunde verweist der Lotse sofort an Ihr Team.'},
+    {page:'kontakt',sel:'[data-tour="karte"]',title:'Karte erst nach Ihrem Klick',
+     text:'Externe Kartendaten werden erst geladen, wenn jemand zustimmt. Ein kleines Detail, das beim Datenschutz viel Ärger erspart.'},
+    {page:'start',title:'Das war die Tour',
+     text:'Sie k\u00f6nnen jetzt frei durch den Entwurf klicken. \u00dcber die Schaltfl\u00e4che Konzept oben im Kopfbereich starten Sie die Tour jederzeit neu.'}
+  ];
+
+  var tourIdx=-1, tourSpot=null, tourCard=null, tourInvite=null, tourDone=false, tourBack=null;
+
+  function showBackdrop(onClick){
+    if(!tourBack){
+      tourBack=document.createElement('div');
+      tourBack.className='tour-backdrop';
+      document.body.appendChild(tourBack);
+      requestAnimationFrame(function(){tourBack.classList.add('show')});
+    }
+    tourBack.onclick=onClick||null;
+  }
+  function hideBackdrop(){
+    if(tourBack){tourBack.remove();tourBack=null;}
+  }
+
+  function clearSpot(){
+    if(tourSpot){tourSpot.classList.remove('tour-spot');tourSpot=null;}
+  }
+
+  function scrollToEl(el){
+    var r=el.getBoundingClientRect(), vh=window.innerHeight;
+    var tall=r.height>vh*0.5;
+    var top=window.pageYOffset+r.top-(tall?96:Math.max(88,(vh-210-r.height)/2));
+    window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+  }
+
+  function endTour(){
+    clearSpot();
+    if(tourCard){tourCard.remove();tourCard=null;}
+    hideBackdrop();
+    document.body.classList.remove('touring');
+    tourIdx=-1; tourDone=true;
+  }
+
+  function buildTourCard(){
+    tourCard=document.createElement('div');
+    tourCard.className='tour-card';
+    tourCard.setAttribute('role','dialog');
+    tourCard.setAttribute('aria-label','Gef\u00fchrte Tour');
+    tourCard.innerHTML='<div class="tour-top"><span class="tour-count"></span>'+
+      '<button class="tour-x" aria-label="Tour beenden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>'+
+      '<h3></h3><p></p>'+
+      '<div class="tour-nav"><button class="btn btn-ghost tour-prev">Zur\u00fcck</button>'+
+      '<button class="btn btn-heart tour-next">Weiter</button>'+
+      '<button class="tour-skip">Tour beenden</button></div>';
+    document.body.appendChild(tourCard);
+    tourCard.querySelector('.tour-x').addEventListener('click',endTour);
+    tourCard.querySelector('.tour-skip').addEventListener('click',endTour);
+    tourCard.querySelector('.tour-prev').addEventListener('click',function(){showStep(tourIdx-1)});
+    tourCard.querySelector('.tour-next').addEventListener('click',function(){
+      if(tourIdx>=TOUR.length-1){endTour();}else{showStep(tourIdx+1);}
+    });
+  }
+
+  function showStep(i){
+    if(i<0||i>=TOUR.length){return;}
+    tourIdx=i;
+    var s=TOUR[i];
+    clearSpot();
+    goto(s.page);
+    if(!tourCard){buildTourCard();}
+    tourCard.querySelector('.tour-count').textContent='Schritt '+(i+1)+' von '+TOUR.length;
+    tourCard.querySelector('h3').textContent=s.title;
+    tourCard.querySelector('p').textContent=s.text;
+    tourCard.querySelector('.tour-prev').style.display=i===0?'none':'';
+    tourCard.querySelector('.tour-next').textContent=i===TOUR.length-1?'Fertig':'Weiter';
+    if(s.sel){
+      setTimeout(function(){
+        var el=document.querySelector(s.sel);
+        if(el){el.classList.add('tour-spot');tourSpot=el;scrollToEl(el);}
+      },140);
+    }
+  }
+
+  function startTour(){
+    if(tourInvite){tourInvite.remove();tourInvite=null;}
+    panel.hidden=true;
+    document.body.classList.add('touring');
+    showBackdrop(null);
+    showStep(0);
+  }
+
+  ['#tourStart','#tourStartNav','#tourStartNavMobile'].forEach(function(id){
+    var b=$(id);
+    if(b){b.addEventListener('click',function(){closeMenu();startTour();});}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'){return;}
+    if(tourIdx>-1){endTour();}
+    else if(tourInvite){tourInvite.remove();tourInvite=null;hideBackdrop();tourDone=true;}
+  });
+
+  /* Einladung, nicht aufdringlich und jederzeit wegklickbar */
+  setTimeout(function(){
+    if(tourDone||tourIdx>-1){return;}
+    tourInvite=document.createElement('div');
+    tourInvite.className='tour-invite';
+    tourInvite.innerHTML='<div class="tour-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>'+
+      '<h3>Was ist neu?</h3>'+
+      '<p>Eine kurze Tour zeigt Ihnen die wichtigsten \u00c4nderungen gegen\u00fcber der bisherigen Website, in rund zwei Minuten. Sie k\u00f6nnen jederzeit abbrechen.</p>'+
+      '<button class="btn btn-heart tour-go">Tour starten</button>'+
+      '<button class="tour-skip">Nein danke, selbst umsehen</button>';
+    function dismissInvite(){
+      if(tourInvite){tourInvite.remove();tourInvite=null;}
+      hideBackdrop();
+      tourDone=true;
+    }
+    document.body.appendChild(tourInvite);
+    showBackdrop(dismissInvite);
+    requestAnimationFrame(function(){tourInvite.classList.add('show')});
+    tourInvite.querySelector('.tour-go').addEventListener('click',startTour);
+    tourInvite.querySelector('.tour-skip').addEventListener('click',dismissInvite);
+  },1400);
 })();
 </script>
 </body>
