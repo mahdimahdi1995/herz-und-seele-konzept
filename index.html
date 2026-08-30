@@ -845,7 +845,12 @@ form.hidden{display:none}
       if(!f.checkValidity()){f.reportValidity();return;}
       f.classList.add('hidden');
       var s=f.parentElement.querySelector('.success');
-      if(s){s.classList.add('show');}
+      if(s){
+        s.classList.add('show');
+        setTimeout(function(){
+          s.scrollIntoView({behavior:'smooth',block:'center'});
+        },50);
+      }
     });
   });
 
