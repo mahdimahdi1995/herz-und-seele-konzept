@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pflegedienst mit Herz und Seele · Kevelaer · Konzept</title>
+<meta name="description" content="Ambulanter Pflegedienst in Kevelaer und Umgebung: Grundpflege, Behandlungspflege, Beratung für Angehörige, 24-Stunden-Rufbereitschaft.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Pflegedienst mit Herz und Seele · Kevelaer · Konzept">
+<meta property="og:description" content="Klickbarer Konzeptentwurf für den Relaunch von herz-und-seele.org: Leistungen, Team, Jobs, Ratgeber und ein KI-gestützter Pflege-Lotse.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238E2F44'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF4EF;
+  --paper2:#F5E9E2;
+  --card:#FFFFFF;
+  --ink:#362328;
+  --ink-soft:#5C4046;
+  --ink2:#82666D;
+  --line:#EBDCD6;
+  --heart:#8E2F44;
+  --heart-deep:#6F2234;
+  --heart-tint:#F7E2E4;
+  --soul:#3F6B58;
+  --soul-tint:#E3EFE7;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(84,38,48,.08);
+  --font-display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --font-body:'Figtree','Segoe UI',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html.big{font-size:115%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{display:block}
+h1,h2,h3{font-family:var(--font-display);line-height:1.15;letter-spacing:-.01em;color:var(--ink)}
+h1{font-size:clamp(2.05rem,5.5vw,3.35rem);font-weight:700;margin:.15em 0 .4em}
+h1 em{font-style:normal;color:var(--heart)}
+h2{font-size:clamp(1.45rem,3.2vw,2.05rem);font-weight:650;margin:0 0 .55em}
+h3{font-size:1.14rem;font-weight:650;margin:0 0 .35em}
+p{margin:.4em 0}
+.eyebrow{font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soul);margin:0 0 .7em}
+.lead{font-size:1.14rem;color:var(--ink-soft);max-width:56ch}
+.muted{color:var(--ink2)}
+.small{font-size:.85rem}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px}
+.sec{margin:3.2rem auto}
+a{color:var(--heart);text-underline-offset:3px}
+*:focus-visible{outline:3px solid var(--heart);outline-offset:2px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:0;background:var(--heart);color:#fff;padding:.6em 1em;z-index:200;border-radius:0 0 10px 0}
+.skip:focus{left:0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.5em;border:none;border-radius:999px;padding:.8em 1.35em;font:600 1rem var(--font-body);cursor:pointer;text-decoration:none;transition:background .15s ease,transform .12s ease}
+.btn:active{transform:scale(.98)}
+.btn svg{width:18px;height:18px}
+.btn-heart{background:var(--heart);color:#fff}
+.btn-heart:hover{background:var(--heart-deep)}
+.btn-ghost{background:transparent;color:var(--heart);box-shadow:inset 0 0 0 2px var(--heart)}
+.btn-ghost:hover{background:var(--heart-tint)}
+.btn-paper{background:#fff;color:var(--soul)}
+.btn-paper:hover{background:var(--soul-tint)}
+.linkish{background:none;border:none;color:var(--heart);font:700 .95rem var(--font-body);cursor:pointer;padding:0}
+.linkish:hover{text-decoration:underline}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(251,244,239,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.62rem 0}
+.brand{display:flex;align-items:center;gap:.6rem;background:none;border:none;cursor:pointer;text-align:left;padding:0;font-family:var(--font-body)}
+.brand-mark{width:38px;height:38px;flex:none;background:var(--heart);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff}
+.brand-mark svg{width:20px;height:20px}
+.brand-text{font-size:.78rem;line-height:1.25;color:var(--ink2)}
+.brand-text strong{display:block;font-family:var(--font-display);font-size:1.02rem;color:var(--ink);font-weight:650;letter-spacing:0}
+.concept-pill{font-size:.66rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;background:var(--soul-tint);color:var(--soul);border-radius:999px;padding:.32em .7em;flex:none}
+.site-nav{display:flex;gap:.1rem;margin-left:auto}
+.navlink{border:none;background:none;font:600 .94rem var(--font-body);color:var(--ink-soft);padding:.5em .8em;border-radius:999px;cursor:pointer;white-space:nowrap}
+.navlink:hover{color:var(--heart-deep);background:var(--heart-tint)}
+.navlink.active{background:var(--heart-tint);color:var(--heart-deep)}
+.header-actions{display:flex;align-items:center;gap:.55rem}
+.textsize{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:.32em .55em;cursor:pointer;font-family:var(--font-display);font-weight:700;color:var(--ink);line-height:1;font-size:.8rem}
+.textsize span{font-size:1.25em}
+.textsize[aria-pressed="true"]{background:var(--soul);border-color:var(--soul);color:#fff}
+.header-call{padding:.62em 1.05em;font-size:.94rem}
+.menu-btn{display:none;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:.45em .6em;cursor:pointer;color:var(--ink)}
+.menu-btn svg{width:20px;height:20px}
+.mobile-nav{display:none;flex-direction:column;gap:.15rem;padding:.5rem 20px 1rem;border-top:1px solid var(--line);background:var(--paper)}
+.mobile-nav.open{display:flex}
+.mobile-nav .navlink{text-align:left;padding:.7em .9em;font-size:1.05rem}
+
+/* Pages */
+.page[hidden]{display:none}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:2.6rem;align-items:start;padding-top:3rem}
+.pulse{width:min(430px,100%);height:auto;margin:.5rem 0 1rem;color:var(--heart)}
+.pulse path{fill:none;stroke:currentColor;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s ease forwards}
+.pulse .p1{animation-delay:.2s}
+.pulse .p2{animation-delay:1.15s;animation-duration:1.1s}
+.pulse .p3{animation-delay:1.9s;animation-duration:.7s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.3rem}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 0;padding:0}
+.chips li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.42em .95em;font-size:.88rem;color:var(--ink-soft);display:flex;align-items:center;gap:.45em}
+.chips li i{font-style:normal;color:var(--heart)}
+.hero-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem;margin-top:1.2rem}
+.hero-card h2{font-size:1.2rem;margin-bottom:.4em}
+.big-tel{display:inline-block;font-family:var(--font-display);font-weight:700;font-size:1.9rem;color:var(--heart);text-decoration:none;margin:.1em 0 .3em}
+.big-tel:hover{color:var(--heart-deep)}
+.info-list{list-style:none;margin:.8rem 0 0;padding:0;display:grid;gap:.6rem;font-size:.94rem;color:var(--ink-soft)}
+.info-list li{display:flex;gap:.6rem;align-items:flex-start}
+.info-list svg{width:18px;height:18px;flex:none;color:var(--soul);margin-top:.18em}
+
+/* Bands + grids + cards */
+.band{background:var(--paper2);padding:3.2rem 0;margin:3.2rem 0}
+.band-soul{background:var(--soul);color:#fff;padding:3.4rem 0;margin:3.2rem 0}
+.band-soul .eyebrow{color:#CFE4D8}
+.band-soul blockquote{font-family:var(--font-display);font-size:clamp(1.35rem,3vw,1.85rem);font-weight:600;line-height:1.35;margin:0 0 1.3rem;max-width:800px}
+.grid{display:grid;gap:1.1rem}
+.cols-2{grid-template-columns:1fr 1fr}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.35rem;box-shadow:var(--shadow)}
+.card p{margin:.25rem 0 0;color:var(--ink-soft);font-size:.96rem}
+.icon{width:44px;height:44px;border-radius:12px;background:var(--heart-tint);color:var(--heart);display:flex;align-items:center;justify-content:center;margin-bottom:.85rem}
+.icon svg{width:22px;height:22px}
+.icon.soul{background:var(--soul-tint);color:var(--soul)}
+.card .linkish{margin-top:.75rem;display:inline-block}
+.kosten{margin-top:1rem;padding:.75rem .95rem;background:var(--paper2);border-radius:12px;font-size:.9rem;color:var(--ink-soft)}
+.kosten strong{color:var(--ink)}
+.list-check{list-style:none;margin:.7rem 0 0;padding:0;display:grid;gap:.45rem}
+.list-check li{padding-left:1.5rem;position:relative;color:var(--ink-soft);font-size:.96rem}
+.list-check li::before{content:"✓";position:absolute;left:0;top:0;color:var(--soul);font-weight:700}
+
+/* Steps */
+.steps-list{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin:1.4rem 0 0;padding:0}
+.steps-list li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow)}
+.steps-list li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:2.3rem;height:2.3rem;border-radius:50%;background:var(--heart);color:#fff;font:700 1.1rem var(--font-display);margin-bottom:.8rem}
+
+/* Team */
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:1.3rem}
+.tm{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.05rem .75rem;text-align:center}
+.avatar{position:relative;overflow:hidden;margin:0 auto .6rem;width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 1.15rem var(--font-display);background:var(--heart-tint);color:var(--heart-deep)}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tm:nth-child(even) .avatar{background:var(--soul-tint);color:var(--soul)}
+.tm strong{display:block;font-size:.94rem;line-height:1.3}
+.tm span{display:block;font-size:.78rem;color:var(--ink2);line-height:1.35;margin-top:.25rem}
+
+/* Accordion */
+.acc-stack{display:grid;gap:.7rem;margin-top:1.2rem}
+details.acc{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+details.acc summary{cursor:pointer;padding:1rem 1.2rem;font-weight:650;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::after{content:"+";font-family:var(--font-display);font-size:1.3rem;color:var(--heart);flex:none}
+details.acc[open] summary::after{content:"−"}
+.acc-body{padding:0 1.2rem 1.1rem;color:var(--ink-soft);font-size:.98rem}
+
+/* Forms */
+.field{margin:0 0 1rem}
+label{display:block;font-weight:600;font-size:.9rem;margin:0 0 .35rem}
+input,select,textarea{width:100%;padding:.75em .9em;border:1.5px solid var(--line);border-radius:12px;background:#fff;font:inherit;color:inherit}
+input:focus,select:focus,textarea:focus{border-color:var(--heart);outline:none}
+textarea{min-height:110px;resize:vertical}
+.form-2{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
+.req{color:var(--heart)}
+.form-note{font-size:.84rem;color:var(--ink2);margin-top:.6rem}
+.check-row{display:flex;gap:.6rem;align-items:flex-start;font-size:.88rem;color:var(--ink-soft);margin:0 0 1.1rem}
+.check-row input{width:auto;margin-top:.28em}
+.success{display:none;background:var(--soul-tint);border:1.5px solid var(--soul);border-radius:14px;padding:1.1rem 1.25rem;color:#28483A}
+.success.show{display:block}
+form.hidden{display:none}
+
+/* Wegweiser */
+.wiz-q{font-family:var(--font-display);font-weight:650;font-size:1.14rem;margin:0 0 .85rem}
+.wiz-opts{display:flex;flex-wrap:wrap;gap:.6rem}
+.wiz-opt{background:transparent;color:var(--heart);box-shadow:inset 0 0 0 2px var(--heart);border:none;border-radius:999px;padding:.55em 1.05em;font:600 .94rem var(--font-body);cursor:pointer}
+.wiz-opt:hover{background:var(--heart-tint)}
+.wiz-opt.sel{background:var(--heart);color:#fff}
+.wiz-panel{display:none;margin-top:1.15rem;background:var(--paper2);border-radius:14px;padding:1.15rem 1.25rem}
+.wiz-panel.show{display:block}
+.wiz-note{font-size:.82rem;color:var(--ink2);margin-top:1rem}
+
+/* Map */
+.map-card{position:relative;border:1px solid var(--line);border-radius:var(--radius);background:var(--soul-tint);min-height:225px;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.6rem;overflow:hidden}
+.map-inner{max-width:420px}
+.map-pin{width:44px;height:44px;border-radius:50%;background:#fff;color:var(--heart);display:flex;align-items:center;justify-content:center;margin:0 auto .7rem;box-shadow:var(--shadow)}
+.map-pin svg{width:22px;height:22px}
+
+/* Footer */
+.site-footer{background:#33232A;color:#F2E3DF;margin-top:4rem;padding:3rem 0 5.5rem}
+.site-footer a{color:#F2E3DF}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem}
+.foot h4{font-family:var(--font-display);margin:0 0 .7rem;font-size:1rem;color:#fff}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;font-size:.95rem}
+.flink{background:none;border:none;color:inherit;padding:0;cursor:pointer;font:inherit;text-align:left}
+.flink:hover{text-decoration:underline}
+.foot-note{margin-top:2.2rem;padding-top:1.2rem;border-top:1px solid rgba(242,227,223,.25);font-size:.82rem;color:#CFB4B0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+
+/* Mobile call bar */
+.callbar{display:none}
+
+/* Chat */
+#chatFab{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:.55em;background:var(--heart);color:#fff;border:none;border-radius:999px;padding:.85em 1.25em;font:600 1rem var(--font-body);box-shadow:0 12px 30px rgba(111,34,52,.35);cursor:pointer}
+#chatFab svg{width:19px;height:19px}
+#chatFab:hover{background:var(--heart-deep)}
+#chatPanel{position:fixed;right:18px;bottom:18px;z-index:70;width:min(400px,calc(100vw - 24px));height:min(580px,calc(100vh - 40px));background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 60px rgba(54,35,40,.3);display:flex;flex-direction:column;overflow:hidden}
+#chatPanel[hidden]{display:none}
+.chat-head{background:var(--heart);color:#fff;padding:.85rem 1rem;display:flex;align-items:center;gap:.7rem}
+.chat-head .brand-mark{background:rgba(255,255,255,.18)}
+.chat-title{flex:1;line-height:1.25}
+.chat-title strong{font-family:var(--font-display);font-size:1.02rem;display:block}
+.chat-title small{opacity:.85;font-size:.76rem}
+.chat-close{background:none;border:none;color:#fff;cursor:pointer;padding:.3em}
+.chat-close svg{width:20px;height:20px}
+.chat-note{font-size:.78rem;background:var(--heart-tint);color:var(--heart-deep);padding:.5rem .95rem;line-height:1.45}
+.chat-msgs{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.7rem;background:var(--paper)}
+.msg{max-width:86%;padding:.65em .95em;border-radius:16px;font-size:.94rem;line-height:1.5;white-space:pre-wrap;overflow-wrap:break-word}
+.msg.user{align-self:flex-end;background:var(--heart);color:#fff;border-bottom-right-radius:6px}
+.msg.bot{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:6px}
+.dots{display:inline-flex;gap:4px;padding:.2em 0}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--ink2);animation:blink 1.2s infinite}
+.dots i:nth-child(2){animation-delay:.2s}
+.dots i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.chat-chips{display:flex;gap:.5rem;flex-wrap:wrap;padding:.6rem .95rem;border-top:1px solid var(--line);background:#fff}
+.chip-btn{font-size:.79rem;border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:.42em .85em;cursor:pointer;color:var(--ink-soft);font-family:var(--font-body)}
+.chip-btn:hover{border-color:var(--heart);color:var(--heart-deep)}
+.chat-input{display:flex;gap:.55rem;padding:.7rem;border-top:1px solid var(--line);background:#fff}
+.chat-input input{flex:1;border-radius:999px}
+.chat-send{flex:none;width:46px;height:46px;border-radius:50%;background:var(--heart);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.chat-send svg{width:19px;height:19px}
+.chat-send:disabled{opacity:.5;cursor:default}
+
+/* Responsive */
+@media (max-width:980px){
+  .site-nav{display:none}
+  .menu-btn{display:inline-flex}
+  .cols-4{grid-template-columns:1fr 1fr}
+  .cols-3{grid-template-columns:1fr 1fr}
+  .team{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:1.4rem;padding-top:2.2rem}
+}
+@media (max-width:760px){
+  .steps-list{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .form-2{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .header-call{display:none}
+  #chatFab{display:none}
+  .callbar{position:fixed;left:0;right:0;bottom:0;z-index:65;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+  .callbar a,.callbar button{display:flex;align-items:center;justify-content:center;gap:.5em;padding:.95em;font:650 1rem var(--font-body);border:none;cursor:pointer;text-decoration:none}
+  .callbar svg{width:18px;height:18px}
+  .cb-call{background:var(--heart);color:#fff}
+  .cb-chat{background:#fff;color:var(--heart-deep)}
+  #chatPanel{right:0;left:0;bottom:0;width:100%;height:min(85vh,640px);border-radius:20px 20px 0 0;border-left:none;border-right:none;border-bottom:none}
+}
+@media (max-width:640px){
+  .cols-2,.cols-4,.cols-3{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr 1fr}
+  .band,.band-soul{padding:2.4rem 0;margin:2.4rem 0}
+  .sec{margin:2.4rem auto}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .pulse path{animation:none;stroke-dashoffset:0}
+  .dots i{animation:none;opacity:.6}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <button class="brand" data-goto="start" aria-label="Zur Startseite">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+      <span class="brand-text">Ambulanter Pflegedienst<strong>mit Herz und Seele</strong></span>
+    </button>
+    <span class="concept-pill">Konzept</span>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <button class="navlink active" data-goto="start">Start</button>
+      <button class="navlink" data-goto="leistungen">Leistungen</button>
+      <button class="navlink" data-goto="ueber">Über uns</button>
+      <button class="navlink" data-goto="jobs">Jobs</button>
+      <button class="navlink" data-goto="ratgeber">Ratgeber</button>
+      <button class="navlink" data-goto="kontakt">Kontakt</button>
+    </nav>
+    <div class="header-actions">
+      <button class="textsize" id="textSizeBtn" aria-pressed="false" title="Größere Schrift ein- und ausschalten">A<span>A</span></button>
+      <a class="btn btn-heart header-call" href="tel:+4928322482"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>02832 2482</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-label="Menü öffnen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="navlink" data-goto="start">Start</button>
+    <button class="navlink" data-goto="leistungen">Leistungen</button>
+    <button class="navlink" data-goto="ueber">Über uns</button>
+    <button class="navlink" data-goto="jobs">Jobs</button>
+    <button class="navlink" data-goto="ratgeber">Ratgeber</button>
+    <button class="navlink" data-goto="kontakt">Kontakt</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== START ===================== -->
+<section class="page" id="page-start">
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">Ambulanter Pflegedienst in Kevelaer</p>
+      <h1>Gut versorgt zuhause.<br><em>Mit Herz und Seele.</em></h1>
+      <svg class="pulse" viewBox="0 0 560 120" aria-hidden="true">
+        <path class="p1" pathLength="1" d="M0 78 H206 L222 44 L240 100 L256 58 L266 78 H336"/>
+        <path class="p2" pathLength="1" d="M392 92 C 372 76 360 62 360 48 C 360 35 370 27 380.5 27 C 386.5 27 391 30.5 392 35 C 393 30.5 397.5 27 403.5 27 C 414 27 424 35 424 48 C 424 62 412 76 392 92 Z"/>
+        <path class="p3" pathLength="1" d="M448 78 H560"/>
+      </svg>
+      <p class="lead">Wir pflegen Menschen in Kevelaer und Umgebung dort, wo sie sich wohlfühlen: im eigenen Zuhause. Fachlich sicher, herzlich und mit einer festen Bezugspflegekraft.</p>
+      <div class="hero-cta">
+        <a class="btn btn-heart" href="tel:+4928322482"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>02832 2482 anrufen</a>
+        <button class="btn btn-ghost" data-goto="kontakt">Rückruf anfragen</button>
+      </div>
+      <ul class="chips">
+        <li><i>♥</i>Feste Bezugspflegekraft</li>
+        <li><i>♥</i>Zertifizierte Wundexpertinnen ICW</li>
+        <li><i>♥</i>24-Stunden-Rufbereitschaft</li>
+        <li><i>♥</i>Abrechnung direkt mit den Kassen</li>
+      </ul>
+    </div>
+    <aside class="hero-card">
+      <h2>Sprechen Sie mit uns</h2>
+      <a class="big-tel" href="tel:+4928322482">02832 2482</a>
+      <ul class="info-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Bürozeiten: Montag bis Freitag, 8 bis 16 Uhr</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Für unsere Patienten: Rufbereitschaft rund um die Uhr</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg><span>info@herz-und-seele.org</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Bahnhofstr. 32, 47625 Kevelaer</span></li>
+      </ul>
+    </aside>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <p class="eyebrow">Unsere Leistungen</p>
+      <h2>Was wir für Sie tun</h2>
+      <div class="grid cols-4">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h3>Grundpflege</h3>
+          <p>Unterstützung im Alltag: Körperpflege, Anziehen, Bewegung, Essen und Trinken.</p>
+          <button class="linkish" data-goto="leistungen">Mehr erfahren ›</button>
+        </div>
+        <div class="card">
+          <div class="icon soul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <h3>Behandlungspflege</h3>
+          <p>Medizinische Pflege auf ärztliche Verordnung: Medikamente, Injektionen, professionelle Wundversorgung.</p>
+          <button class="linkish" data-goto="leistungen">Mehr erfahren ›</button>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <h3>Beratung für Angehörige</h3>
+          <p>Wir hören zu, erklären Ihre Ansprüche und entlasten Sie bei Anträgen und Formalitäten.</p>
+          <button class="linkish" data-goto="leistungen">Mehr erfahren ›</button>
+        </div>
+        <div class="card">
+          <div class="icon soul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <h3>Rund um die Uhr</h3>
+          <p>Unsere Patientinnen und Patienten erreichen unsere Rufbereitschaft auch nachts und am Wochenende.</p>
+          <button class="linkish" data-goto="leistungen">Mehr erfahren ›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap sec">
+    <p class="eyebrow">Der Weg zu uns</p>
+    <h2>In drei Schritten zur Pflege</h2>
+    <ol class="steps-list">
+      <li><h3>Kontakt aufnehmen</h3><p class="muted">Rufen Sie an oder schreiben Sie uns über das Kontaktformular. Wir melden uns zeitnah zurück.</p></li>
+      <li><h3>Erstgespräch zuhause</h3><p class="muted">Wir kommen zu Ihnen, hören zu und klären gemeinsam und unverbindlich, welche Unterstützung passt.</p></li>
+      <li><h3>Wir kümmern uns</h3><p class="muted">Verordnungen, Anträge, Abstimmung mit Kasse und Arzt: Wir übernehmen den Papierkram und starten die Versorgung.</p></li>
+    </ol>
+  </div>
+
+  <div class="band-soul">
+    <div class="wrap">
+      <p class="eyebrow">Aus unserem Leitbild</p>
+      <blockquote>„Der Mensch, der sich uns anvertraut, steht im Mittelpunkt unseres Handelns. Wir passen die Pflege seinem Zuhause an, nicht das Zuhause der Pflege."</blockquote>
+      <button class="btn btn-paper" data-goto="ueber">Mehr über uns und unser Team</button>
+    </div>
+  </div>
+
+  <div class="wrap sec">
+    <div class="grid cols-2">
+      <div class="card">
+        <p class="eyebrow">Jobs</p>
+        <h2 style="font-size:1.45rem">Kolleginnen und Kollegen gesucht</h2>
+        <p>Pflege ist Teamarbeit. Wir suchen examinierte Pflegefachkräfte in Teilzeit oder für Wochenendtouren auf Minijob-Basis. Bewerben Sie sich in zwei Minuten, ganz ohne Anschreiben.</p>
+        <button class="btn btn-heart" style="margin-top:1rem" data-goto="jobs">Zu den Stellenangeboten</button>
+      </div>
+      <div class="card">
+        <p class="eyebrow">Erste Schritte</p>
+        <h2 style="font-size:1.45rem">Neu im Thema Pflege?</h2>
+        <p>Pflegegrad, Pflegekasse, Verordnung: Unser Ratgeber erklärt die ersten Schritte in einfacher Sprache. Der Pflegegrad-Wegweiser zeigt Ihnen in einer Minute, was als Nächstes zu tun ist.</p>
+        <button class="btn btn-ghost" style="margin-top:1rem" data-goto="ratgeber">Zum Ratgeber</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LEISTUNGEN ===================== -->
+<section class="page" id="page-leistungen" hidden>
+  <div class="wrap sec">
+    <p class="eyebrow">Leistungen</p>
+    <h1>Verständlich erklärt</h1>
+    <p class="lead">Ambulante Pflege steckt voller Begriffe und Paragraphen. Hier erklären wir unsere Leistungen so, wie wir auch mit Ihnen sprechen: verständlich. Was im Einzelfall möglich ist, klären wir gemeinsam im unverbindlichen Erstgespräch.</p>
+
+    <div class="grid cols-2" style="margin-top:1.8rem">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Grundpflege</h3>
+        <p class="small muted">Leistung der Pflegeversicherung (SGB XI)</p>
+        <ul class="list-check">
+          <li>Hilfe bei der Körperpflege, zum Beispiel Waschen, Duschen, Mundpflege</li>
+          <li>An- und Auskleiden</li>
+          <li>Unterstützung beim Aufstehen, Gehen und Lagern</li>
+          <li>Hilfe beim Essen und Trinken</li>
+        </ul>
+        <div class="kosten"><strong>Wer zahlt?</strong> Bei anerkanntem Pflegegrad rechnen wir direkt mit Ihrer Pflegekasse ab. Einen möglichen Eigenanteil besprechen wir offen im Erstgespräch.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon soul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Behandlungspflege</h3>
+        <p class="small muted">Leistung der Krankenversicherung (SGB V), auf ärztliche Verordnung</p>
+        <ul class="list-check">
+          <li>Medikamente richten und verabreichen</li>
+          <li>Injektionen, zum Beispiel Insulin</li>
+          <li>Wundversorgung durch zertifizierte Wundexpertinnen (ICW)</li>
+          <li>An- und Ausziehen von Kompressionsstrümpfen</li>
+          <li>Blutdruck- und Blutzuckerkontrolle</li>
+        </ul>
+        <div class="kosten"><strong>Wer zahlt?</strong> Ihr Arzt verordnet die Leistung, abgerechnet wird in der Regel direkt mit der Krankenkasse. Details klären wir mit Ihnen.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h3>Beratung und Begleitung für Angehörige</h3>
+        <p class="small muted">Damit Ihnen die Kraft nicht ausgeht</p>
+        <ul class="list-check">
+          <li>Beratung zu Pflegegrad, Leistungen und Ansprüchen</li>
+          <li>Unterstützung bei Anträgen und Formalitäten</li>
+          <li>Beratungsbesuche bei Ihnen zuhause</li>
+        </ul>
+        <div class="kosten"><strong>Wer zahlt?</strong> Das Erstgespräch ist unverbindlich. Vieles ist über die Pflegekasse förderfähig. Wir sagen Ihnen ehrlich, was geht.</div>
+      </div>
+
+      <div class="card">
+        <div class="icon soul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>24-Stunden-Rufbereitschaft</h3>
+        <p class="small muted">Weil Pflege sich nicht nach Bürozeiten richtet</p>
+        <p>Unsere Patientinnen und Patienten erreichen unsere Rufbereitschaft rund um die Uhr, an 365 Tagen im Jahr. Für alle anderen Anliegen sind wir montags bis freitags von 8 bis 16 Uhr im Büro erreichbar.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1.1rem;background:var(--heart-tint);border-color:var(--heart)">
+      <h3>Nicht sicher, was Sie brauchen?</h3>
+      <p>Rufen Sie einfach an: <a href="tel:+4928322482"><strong>02832 2482</strong></a>. Gemeinsam finden wir heraus, welche Unterstützung passt und wer die Kosten trägt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ÜBER UNS ===================== -->
+<section class="page" id="page-ueber" hidden>
+  <div class="wrap sec">
+    <p class="eyebrow">Über uns</p>
+    <h1>Ein Team aus Kevelaer, das Pflege persönlich nimmt</h1>
+    <p class="lead">Wir sind ein unabhängiger, privater Pflegedienst für die ambulante Kranken- und Seniorenpflege. Vier Grundsätze leiten unsere tägliche Arbeit.</p>
+
+    <div class="grid cols-2" style="margin-top:1.8rem">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Der Mensch im Mittelpunkt</h3>
+        <p>Wir richten die Pflege nach Ihnen, nicht umgekehrt. Ihre Wohnung bleibt Ihr Zuhause, kein Pflegezimmer.</p>
+      </div>
+      <div class="card">
+        <div class="icon soul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Eine feste Bezugsperson</h3>
+        <p>So weit wie möglich kommt immer dieselbe Pflegekraft zu Ihnen. Vertrauen braucht bekannte Gesichter.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Offen für alle Menschen</h3>
+        <p>Wir pflegen Menschen aus allen Kulturen und richten die Versorgung nach ihren individuellen Bedürfnissen aus.</p>
+      </div>
+      <div class="card">
+        <div class="icon soul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h3>Angehörige im Blick</h3>
+        <p>Wir beraten und entlasten pflegende Angehörige, bevor die Kraft ausgeht.</p>
+      </div>
+    </div>
+
+    <div class="acc-stack">
+      <details class="acc">
+        <summary>Unser Leitbild im Wortlaut (Auszug)</summary>
+        <div class="acc-body">
+          <p>Der sich uns anvertrauende Patient steht im Mittelpunkt unseres Handelns. Wir geben ihm die Möglichkeit, in seiner gewohnten häuslichen Umgebung versorgt zu werden. Ihn in seinem individuellen Menschsein anzunehmen und zu respektieren, ist unser besonderes Anliegen.</p>
+          <p>Genauso wichtig wie eine hohe fachliche Kompetenz sind uns die sozialen Fähigkeiten. Ein liebevoller Umgang, ein offenes Ohr, aufmunternde und warme Worte gehören zu unserer täglichen Arbeit. Wir gehen offen auf Patienten aus anderen Kulturkreisen zu.</p>
+          <p>Ein großes Anliegen ist uns, jedem Patienten eine feste Pflegeperson zur Seite zu stellen. Das ermöglicht ein Vertrauensverhältnis zwischen Patient und Pflegekraft. Darüber hinaus verstehen wir uns als Begleiter und Berater für pflegende Angehörige.</p>
+          <p class="small muted">Gekürzter Auszug. Die vollständige Fassung wird für die fertige Website gemeinsam final abgestimmt.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <p class="eyebrow">Das Team</p>
+      <h2>Diese Menschen kommen zu Ihnen</h2>
+      <div class="team">
+        <div class="tm"><div class="avatar"><img src="https://herz-und-seele.org/.cm4all/uproc.php/0/.IMG_3685%20-%20Kopie.jpeg/picture-200?_=1905acc508e" alt="Nicole Rogmann-Brune" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">NR</div><strong>Nicole Rogmann-Brune</strong><span>Geschäftsführung, Pflegedienstleitung, Wundexpertin ICW</span></div>
+        <div class="tm"><div class="avatar"><img src="https://herz-und-seele.org/.cm4all/uproc.php/0/.IMG_3665%20(1)%20-%20Kopie.JPG/picture-200?_=191d1de8bdf" alt="Iris Besems" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">IB</div><strong>Iris Besems</strong><span>Stellv. Pflegedienstleitung, Wundexpertin ICW</span></div>
+        <div class="tm"><div class="avatar"><img src="https://herz-und-seele.org/.cm4all/uproc.php/0/.12.jpg/picture-200?_=1905ac8a141" alt="Silvia Sauer" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">SS</div><strong>Silvia Sauer</strong><span>Verwaltung, Kauffrau im Gesundheitswesen</span></div>
+        <div class="tm"><div class="avatar">P</div><strong>Pascal</strong><span>Verwaltung, Kurierfahrten</span></div>
+        <div class="tm"><div class="avatar"><img src="https://herz-und-seele.org/.cm4all/uproc.php/0/.IMG_3665%20-%20Kopie_1.JPG/picture-200?_=191d1e1b9e2" alt="Lina" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">L</div><strong>Lina</strong><span>Pflegefachfrau</span></div>
+        <div class="tm"><div class="avatar">P</div><strong>Pia</strong><span>Examinierte Altenpflegerin, Praxisanleiterin</span></div>
+        <div class="tm"><div class="avatar">S</div><strong>Sandra</strong><span>Pflegekraft</span></div>
+        <div class="tm"><div class="avatar">J</div><strong>Jennifer</strong><span>Pflegekraft</span></div>
+        <div class="tm"><div class="avatar">F</div><strong>Florian</strong><span>Pflegekraft</span></div>
+        <div class="tm"><div class="avatar">T</div><strong>Tina</strong><span>Examinierte Altenpflegerin</span></div>
+      </div>
+      <p class="small muted" style="margin-top:1rem">Konzept-Hinweis: Vier Fotos stammen von der bestehenden Website und sind dort direkt eingebunden. Die übrigen Porträts sind Platzhalter bis zum gemeinsamen Fototermin. Für die fertige Website werden alle Fotos auf dem neuen Server gespeichert.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== JOBS ===================== -->
+<section class="page" id="page-jobs" hidden>
+  <div class="wrap sec">
+    <p class="eyebrow">Jobs</p>
+    <h1>Arbeiten mit Herz und Seele</h1>
+    <p class="lead">Ein familiäres Team, feste Touren und Patienten, die man wirklich kennt: So arbeiten wir in Kevelaer und Umgebung.</p>
+
+    <div class="grid cols-4" style="margin-top:1.8rem">
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h3>Feste Touren</h3><p>Bezugspflege statt Fließband: Sie pflegen Menschen, keine Nummern.</p></div>
+      <div class="card"><div class="icon soul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Kurze Wege</h3><p>Kleines Team, direkte Absprachen mit der Leitung, ohne Umwege.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3>Weiterbildung</h3><p>Wir fördern Ihre Entwicklung, zum Beispiel bis zur Wundexpertin ICW.</p></div>
+      <div class="card"><div class="icon soul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3>Verlässliche Planung</h3><p>Dienstpläne, auf die Sie sich einstellen können.</p></div>
+    </div>
+    <p class="small muted" style="margin-top:.9rem">Konzept-Hinweis: Diese Vorteile werden vor dem Livegang mit dem Team final abgestimmt.</p>
+
+    <h2 style="margin-top:2.6rem">Aktuelle Stellenangebote</h2>
+    <div class="grid cols-3">
+      <div class="card"><h3>Pflegefachkraft (m/w/d)</h3><p class="small muted">Teilzeit</p><p>Mit 3-jährigem Examen, für Touren in Kevelaer und Umgebung.</p></div>
+      <div class="card"><h3>Pflegefachkraft (m/w/d)</h3><p class="small muted">Minijob, Wochenende</p><p>Wochenendtouren auf geringfügiger Basis, mit 3-jährigem Examen.</p></div>
+      <div class="card"><h3>Initiativbewerbung</h3><p class="small muted">Jederzeit willkommen</p><p>Sie passen zu uns, aber keine Stelle passt gerade? Schreiben Sie uns trotzdem.</p></div>
+    </div>
+
+    <div class="card" style="margin-top:2.2rem">
+      <h2 style="font-size:1.4rem">Schnellbewerbung</h2>
+      <p class="muted">Ohne Anschreiben, ohne Lebenslauf-Pflicht. Wir melden uns telefonisch bei Ihnen.</p>
+      <form data-demo-form novalidate style="margin-top:1.1rem">
+        <div class="form-2">
+          <div class="field"><label for="bw-name">Name <span class="req">*</span></label><input id="bw-name" required autocomplete="name"></div>
+          <div class="field"><label for="bw-tel">Telefon <span class="req">*</span></label><input id="bw-tel" type="tel" required autocomplete="tel"></div>
+          <div class="field"><label for="bw-quali">Qualifikation</label><select id="bw-quali"><option>Pflegefachkraft mit 3-jährigem Examen</option><option>Examinierte Altenpflegerin / Altenpfleger</option><option>Pflegehelferin / Pflegehelfer</option><option>Andere</option></select></div>
+          <div class="field"><label for="bw-art">Ich interessiere mich für</label><select id="bw-art"><option>Teilzeit</option><option>Minijob am Wochenende</option><option>Initiativbewerbung</option></select></div>
+        </div>
+        <div class="field"><label for="bw-msg">Nachricht (optional)</label><textarea id="bw-msg" placeholder="Zum Beispiel: Wann Sie starten könnten oder was Sie gern wissen möchten."></textarea></div>
+        <button class="btn btn-heart" type="submit">Bewerbung senden</button>
+        <p class="form-note">Demo-Formular im Konzept. In der fertigen Website wird Ihre Kurzbewerbung verschlüsselt an das Team übermittelt.</p>
+      </form>
+      <div class="success">Vielen Dank für Ihre Bewerbung! Wir melden uns zeitnah telefonisch bei Ihnen. (Demo-Bestätigung)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RATGEBER ===================== -->
+<section class="page" id="page-ratgeber" hidden>
+  <div class="wrap sec">
+    <p class="eyebrow">Ratgeber</p>
+    <h1>Erste Schritte in der Pflege</h1>
+    <p class="lead">Wenn Pflege plötzlich Thema wird, ist vieles neu. Hier finden Sie Orientierung in einfacher Sprache.</p>
+
+    <div class="card" style="margin-top:1.8rem">
+      <p class="eyebrow" style="color:var(--heart)">Pflegegrad-Wegweiser</p>
+      <p class="wiz-q">Gibt es bereits einen anerkannten Pflegegrad?</p>
+      <div class="wiz-opts">
+        <button class="wiz-opt" data-wiz="pg1">Ja, Pflegegrad 1</button>
+        <button class="wiz-opt" data-wiz="pg25">Ja, Pflegegrad 2 bis 5</button>
+        <button class="wiz-opt" data-wiz="none">Nein</button>
+        <button class="wiz-opt" data-wiz="none">Ich weiß es nicht</button>
+      </div>
+      <div class="wiz-panel" id="wiz-pg1">
+        <h3>Ihre nächsten Schritte mit Pflegegrad 1</h3>
+        <p class="muted">Mit Pflegegrad 1 stehen vor allem der Entlastungsbetrag und Beratung zur Verfügung. Grundpflege über Pflegesachleistungen beginnt in der Regel ab Pflegegrad 2. Behandlungspflege ist davon unabhängig mit ärztlicher Verordnung möglich.</p>
+        <ul class="list-check">
+          <li>Prüfen, ob eine ärztliche Verordnung für Behandlungspflege sinnvoll ist</li>
+          <li>Beratungsgespräch vereinbaren, wir schauen gemeinsam, was passt</li>
+          <li>Bei steigendem Bedarf: Höherstufung beantragen, wir unterstützen dabei</li>
+        </ul>
+        <div class="hero-cta"><a class="btn btn-heart" href="tel:+4928322482">Jetzt anrufen</a><button class="btn btn-ghost" data-goto="kontakt">Rückruf anfragen</button></div>
+      </div>
+      <div class="wiz-panel" id="wiz-pg25">
+        <h3>Ihre nächsten Schritte mit Pflegegrad 2 bis 5</h3>
+        <p class="muted">Gut, dann können Leistungen wie die Grundpflege über Pflegesachleistungen direkt mit der Pflegekasse abgerechnet werden. Im Erstgespräch planen wir gemeinsam die Einsätze und rechnen Ihnen transparent vor, was Ihre Pflegekasse übernimmt.</p>
+        <ul class="list-check">
+          <li>Pflegegradbescheid bereitlegen</li>
+          <li>Notieren, wobei Unterstützung gewünscht ist</li>
+          <li>Anrufen und Erstgespräch vereinbaren</li>
+        </ul>
+        <div class="hero-cta"><a class="btn btn-heart" href="tel:+4928322482">Jetzt anrufen</a><button class="btn btn-ghost" data-goto="kontakt">Rückruf anfragen</button></div>
+      </div>
+      <div class="wiz-panel" id="wiz-none">
+        <h3>Kein Problem, so kommen Sie zum Pflegegrad</h3>
+        <ul class="list-check">
+          <li>Antrag bei der Pflegekasse stellen, sie gehört zur Krankenkasse, ein Anruf genügt für den Start</li>
+          <li>Der Medizinische Dienst kommt zur Begutachtung nach Hause</li>
+          <li>Der Bescheid kommt per Post, Leistungen gelten rückwirkend ab Antrag</li>
+        </ul>
+        <p class="muted">Wir unterstützen Sie beim Antrag und bereiten Sie auf den Begutachtungstermin vor.</p>
+        <div class="hero-cta"><a class="btn btn-heart" href="tel:+4928322482">Jetzt anrufen</a><button class="btn btn-ghost" data-goto="kontakt">Rückruf anfragen</button></div>
+      </div>
+      <p class="wiz-note">Der Wegweiser gibt allgemeine Orientierung, trifft keine Entscheidungen und ersetzt keine persönliche Beratung.</p>
+    </div>
+
+    <h2 style="margin-top:2.6rem">Häufige Fragen</h2>
+    <div class="acc-stack">
+      <details class="acc"><summary>Wer bezahlt die ambulante Pflege?</summary><div class="acc-body"><p>Das hängt von der Leistung ab. Grundpflege rechnen wir bei anerkanntem Pflegegrad direkt mit der Pflegekasse ab. Behandlungspflege wie Medikamentengabe oder Wundversorgung wird ärztlich verordnet und von der Krankenkasse übernommen. Was das für Ihre Situation bedeutet, rechnen wir Ihnen im Erstgespräch transparent vor.</p></div></details>
+      <details class="acc"><summary>Wie schnell kann die Pflege beginnen?</summary><div class="acc-body"><p>Das hängt von der Situation und unseren Kapazitäten ab. Nach dem Erstgespräch geht es oft kurzfristig los. Rufen Sie am besten direkt an, dann sagen wir Ihnen ehrlich, was möglich ist.</p></div></details>
+      <details class="acc"><summary>Kommt immer dieselbe Pflegekraft?</summary><div class="acc-body"><p>So weit es der Dienstplan erlaubt, ja. Feste Bezugspflegekräfte sind Teil unseres Leitbilds, weil Vertrauen bekannte Gesichter braucht.</p></div></details>
+      <details class="acc"><summary>Was ist der Unterschied zwischen Grundpflege und Behandlungspflege?</summary><div class="acc-body"><p>Grundpflege ist Unterstützung im Alltag, etwa bei Körperpflege und Mobilität, und läuft über die Pflegeversicherung. Behandlungspflege ist medizinische Pflege auf ärztliche Verordnung, etwa Injektionen oder Wundversorgung, und läuft über die Krankenversicherung.</p></div></details>
+      <details class="acc"><summary>Wir haben noch keinen Pflegegrad. Was jetzt?</summary><div class="acc-body"><p>Kein Problem. Der Pflegegrad wird bei der Pflegekasse Ihrer Krankenkasse beantragt, danach kommt der Medizinische Dienst zur Begutachtung nach Hause. Wir unterstützen Sie beim Antrag und bereiten Sie auf den Termin vor. Der Pflegegrad-Wegweiser oben zeigt die Schritte.</p></div></details>
+      <details class="acc"><summary>In welchen Orten sind Sie im Einsatz?</summary><div class="acc-body"><p>In Kevelaer und der Umgebung. Ob wir auch zu Ihnen kommen, klären wir am schnellsten am Telefon: 02832 2482.</p></div></details>
+    </div>
+
+    <div class="card" style="margin-top:2.2rem;background:var(--soul-tint);border-color:var(--soul)">
+      <h3>Noch Fragen?</h3>
+      <p>Unser Pflege-Lotse hilft weiter: ein KI-Assistent, der allgemeine Fragen beantwortet und Sie zum richtigen Ansprechpartner führt. Er trifft keine Entscheidungen und ersetzt keine Beratung.</p>
+      <button class="btn btn-heart" style="margin-top:.8rem" data-open-chat>Pflege-Lotse öffnen</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KONTAKT ===================== -->
+<section class="page" id="page-kontakt" hidden>
+  <div class="wrap sec">
+    <p class="eyebrow">Kontakt</p>
+    <h1>Wir sind für Sie da</h1>
+    <p class="lead">Rufen Sie an oder schreiben Sie uns. Wir melden uns zeitnah zurück und freuen uns, Ihnen helfen zu dürfen.</p>
+
+    <div class="grid cols-2" style="margin-top:1.8rem;align-items:start">
+      <div class="card">
+        <h2 style="font-size:1.35rem">Nachricht senden</h2>
+        <form data-demo-form novalidate style="margin-top:1rem">
+          <div class="form-2">
+            <div class="field"><label for="kt-vn">Vorname <span class="req">*</span></label><input id="kt-vn" required autocomplete="given-name"></div>
+            <div class="field"><label for="kt-nn">Nachname <span class="req">*</span></label><input id="kt-nn" required autocomplete="family-name"></div>
+            <div class="field"><label for="kt-tel">Telefon <span class="req">*</span></label><input id="kt-tel" type="tel" required autocomplete="tel"></div>
+            <div class="field"><label for="kt-mail">E-Mail</label><input id="kt-mail" type="email" autocomplete="email"></div>
+          </div>
+          <div class="field"><label for="kt-thema">Mein Anliegen</label><select id="kt-thema"><option>Ich interessiere mich für Pflege</option><option>Beratung für Angehörige</option><option>Bewerbung</option><option>Sonstiges</option></select></div>
+          <div class="field"><label for="kt-msg">Nachricht</label><textarea id="kt-msg"></textarea></div>
+          <label class="check-row"><input type="checkbox" required><span>Ich habe die Datenschutzhinweise gelesen. <span class="req">*</span> (Platzhalter, die Datenschutzerklärung wird für die neue Website erstellt)</span></label>
+          <button class="btn btn-heart" type="submit">Nachricht senden</button>
+          <p class="form-note">Demo-Formular im Konzept, es wird noch nichts übermittelt.</p>
+        </form>
+        <div class="success">Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen. (Demo-Bestätigung)</div>
+      </div>
+
+      <div>
+        <div class="card">
+          <h2 style="font-size:1.35rem">Direkter Draht</h2>
+          <a class="big-tel" href="tel:+4928322482">02832 2482</a>
+          <ul class="info-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Bürozeiten: Montag bis Freitag, 8 bis 16 Uhr</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Für unsere Patienten: Rufbereitschaft rund um die Uhr</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg><span>info@herz-und-seele.org</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg><span>Fax: 032221096097</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Bahnhofstr. 32, 47625 Kevelaer</span></li>
+          </ul>
+        </div>
+        <div class="map-card" style="margin-top:1.1rem" id="mapCard">
+          <div class="map-inner" id="mapConsent">
+            <div class="map-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <p style="margin:0 0 .8rem"><strong>Karte anzeigen?</strong><br><span class="small muted">Erst nach Ihrem Klick werden externe Kartendaten geladen. So schützen wir Ihre Daten.</span></p>
+            <button class="btn btn-heart" id="mapBtn">Karte laden</button>
+          </div>
+          <div class="map-inner" id="mapShown" hidden>
+            <div class="map-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <p style="margin:0 0 .8rem"><strong>Bahnhofstr. 32, 47625 Kevelaer</strong><br><span class="small muted">Demo: In der fertigen Website erscheint hier die eingebettete Karte.</span></p>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Bahnhofstr.+32,+47625+Kevelaer" target="_blank" rel="noopener">Route in Google Maps öffnen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== IMPRESSUM ===================== -->
+<section class="page" id="page-impressum" hidden>
+  <div class="wrap narrow sec">
+    <h1>Impressum</h1>
+    <div class="card">
+      <p><strong>Ambulanter Pflegedienst mit Herz und Seele</strong><br>Nicole Rogmann-Brune<br>Bahnhofstr. 32<br>47625 Kevelaer</p>
+      <p>Telefon: 02832 2482<br>Fax: 032221096097<br>E-Mail: info@herz-und-seele.org</p>
+      <p>IK-Nr.: 462 501 351<br>Betriebsnummer: 76256048</p>
+    </div>
+    <p class="small muted" style="margin-top:1rem">Konzept-Hinweis: Angaben aus der bestehenden Website übernommen. Vor dem Livegang rechtlich prüfen und ergänzen lassen, zum Beispiel um die zuständige Aufsichtsbehörde.</p>
+  </div>
+</section>
+
+<!-- ===================== DATENSCHUTZ ===================== -->
+<section class="page" id="page-datenschutz" hidden>
+  <div class="wrap narrow sec">
+    <h1>Datenschutzerklärung</h1>
+    <div class="card">
+      <p><strong>Platzhalter.</strong> Für die neue Website wird eine vollständige Datenschutzerklärung erstellt. Sie muss unter anderem abdecken: Hosting, Kontaktformular, Schnellbewerbung, den KI-Assistenten und die Karteneinbindung.</p>
+      <p class="muted">Hinweis zur bestehenden Website: Dort ist aktuell keine Datenschutzerklärung auffindbar. Das sollte unabhängig vom Relaunch zeitnah geklärt werden.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot">
+        <h4>Ambulanter Pflegedienst mit Herz und Seele</h4>
+        <ul>
+          <li>Bahnhofstr. 32, 47625 Kevelaer</li>
+          <li><a href="tel:+4928322482">02832 2482</a></li>
+          <li><a href="mailto:info@herz-und-seele.org">info@herz-und-seele.org</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Seiten</h4>
+        <ul>
+          <li><button class="flink" data-goto="leistungen">Leistungen</button></li>
+          <li><button class="flink" data-goto="ueber">Über uns</button></li>
+          <li><button class="flink" data-goto="jobs">Jobs</button></li>
+          <li><button class="flink" data-goto="ratgeber">Ratgeber</button></li>
+          <li><button class="flink" data-goto="kontakt">Kontakt</button></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Rechtliches und Soziales</h4>
+        <ul>
+          <li><button class="flink" data-goto="impressum">Impressum</button></li>
+          <li><button class="flink" data-goto="datenschutz">Datenschutz</button></li>
+          <li><a href="https://www.instagram.com/ambulanterpflegedienstm/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100094524960724" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>Konzeptentwurf zur Abstimmung, keine Live-Website. Stand: August 2026.</span>
+      <span>Design-Konzept: Mahdi Mahdi</span>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="cb-call" href="tel:+4928322482"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Anrufen</a>
+  <button class="cb-chat" data-open-chat><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Pflege-Lotse</button>
+</div>
+
+<button id="chatFab" data-open-chat><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Pflege-Lotse</button>
+
+<div id="chatPanel" hidden role="dialog" aria-label="Pflege-Lotse, KI-Assistent">
+  <div class="chat-head">
+    <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+    <div class="chat-title"><strong>Pflege-Lotse</strong><small>KI-Assistent · Konzept-Demo</small></div>
+    <button class="chat-close" id="chatClose" aria-label="Assistent schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="chat-note">Beantwortet allgemeine Fragen, trifft keine Entscheidungen und ersetzt keine Beratung. Im Zweifel: 02832 2482. Im Notfall: 112.</div>
+  <div class="chat-msgs" id="chatMsgs"></div>
+  <div class="chat-chips">
+    <button class="chip-btn" data-chip>Wer bezahlt die Pflege?</button>
+    <button class="chip-btn" data-chip>Wie beantrage ich einen Pflegegrad?</button>
+    <button class="chip-btn" data-chip>Was ist Behandlungspflege?</button>
+    <button class="chip-btn" data-chip>Ich möchte mich bewerben</button>
+  </div>
+  <div class="chat-input">
+    <input id="chatInput" placeholder="Ihre Frage" aria-label="Ihre Frage an den Pflege-Lotsen">
+    <button class="chat-send" id="chatSend" aria-label="Senden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  /* ---------- Router ---------- */
+  function goto(id){
+    $$('.page').forEach(function(p){p.hidden=(p.id!=='page-'+id)});
+    $$('.navlink[data-goto]').forEach(function(b){b.classList.toggle('active',b.dataset.goto===id)});
+    var mn=$('#mobileNav'); mn.classList.remove('open');
+    $('#menuBtn').setAttribute('aria-expanded','false');
+    window.scrollTo(0,0);
+  }
+  document.addEventListener('click',function(e){
+    var g=e.target.closest('[data-goto]');
+    if(g){goto(g.dataset.goto);return;}
+    var oc=e.target.closest('[data-open-chat]');
+    if(oc){openChat();}
+  });
+
+  /* ---------- Mobile menu ---------- */
+  $('#menuBtn').addEventListener('click',function(){
+    var mn=$('#mobileNav');
+    var open=mn.classList.toggle('open');
+    this.setAttribute('aria-expanded',open?'true':'false');
+  });
+
+  /* ---------- Text size ---------- */
+  $('#textSizeBtn').addEventListener('click',function(){
+    var on=document.documentElement.classList.toggle('big');
+    this.setAttribute('aria-pressed',on?'true':'false');
+  });
+
+  /* ---------- Wegweiser ---------- */
+  $$('.wiz-opt').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      $$('.wiz-opt').forEach(function(b){b.classList.remove('sel')});
+      btn.classList.add('sel');
+      $$('.wiz-panel').forEach(function(p){p.classList.remove('show')});
+      var panel=$('#wiz-'+btn.dataset.wiz);
+      if(panel){panel.classList.add('show');}
+    });
+  });
+
+  /* ---------- Demo forms ---------- */
+  $$('form[data-demo-form]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!f.checkValidity()){f.reportValidity();return;}
+      f.classList.add('hidden');
+      var s=f.parentElement.querySelector('.success');
+      if(s){s.classList.add('show');}
+    });
+  });
+
+  /* ---------- Map consent ---------- */
+  var mapBtn=$('#mapBtn');
+  if(mapBtn){mapBtn.addEventListener('click',function(){
+    $('#mapConsent').hidden=true; $('#mapShown').hidden=false;
+  });}
+
+  /* ---------- Pflege-Lotse (KI-Assistent) ---------- */
+  var SYSTEM=[
+    'Du bist der "Pflege-Lotse", ein KI-Assistent auf der Website des Ambulanten Pflegedienstes "mit Herz und Seele" in Kevelaer (Konzept-Demo).',
+    '',
+    'Deine Rolle: Du hilfst mit allgemeinen Informationen. Du entscheidest nichts und bewertest keine Gesundheitszustaende.',
+    '',
+    'Regeln:',
+    '- Keine medizinische oder pflegerische Beratung, keine Diagnosen, keine Einschaetzung von Pflegegraden im Einzelfall.',
+    '- Keine verbindlichen Zusagen zu Kosten, Kapazitaeten oder Terminen.',
+    '- Bei individuellen oder gesundheitlichen Fragen freundlich an das Team verweisen: Telefon 02832 2482, Montag bis Freitag 8 bis 16 Uhr. Patienten erreichen die Rufbereitschaft rund um die Uhr.',
+    '- Bei Notfaellen sofort auf die 112 verweisen.',
+    '- Antworte kurz, 2 bis 5 Saetze, warm, in einfacher Sprache, per Sie, auf Deutsch, ausser jemand schreibt in einer anderen Sprache.',
+    '- Verwende keine Gedankenstriche als Satzzeichen, nutze Kommas oder Doppelpunkte.',
+    '',
+    'Wissen ueber den Pflegedienst:',
+    '- Ambulanter Pflegedienst mit Herz und Seele, Inhaberin und Pflegedienstleitung: Nicole Rogmann-Brune. Bahnhofstr. 32, 47625 Kevelaer. Telefon 02832 2482, E-Mail info@herz-und-seele.org. Einsatzgebiet: Kevelaer und Umgebung.',
+    '- Leistungen: Grundpflege (Pflegeversicherung, SGB XI, zum Beispiel Koerperpflege, Mobilitaet, An- und Auskleiden), Behandlungspflege (Krankenversicherung, SGB V, auf aerztliche Verordnung, zum Beispiel Medikamente, Injektionen, Wundversorgung durch zertifizierte Wundexpertinnen ICW), Beratung fuer Angehoerige, 24-Stunden-Rufbereitschaft fuer Patienten.',
+    '- Ablauf: 1. anrufen oder Kontaktformular nutzen, 2. unverbindliches Erstgespraech zuhause, 3. der Pflegedienst unterstuetzt bei Verordnungen und Antraegen und startet die Versorgung.',
+    '- Kosten: Grundpflege wird bei anerkanntem Pflegegrad direkt mit der Pflegekasse abgerechnet, Behandlungspflege mit der Krankenkasse. Genaue Betraege und Eigenanteile werden im Erstgespraech geklaert, nenne keine konkreten Eurobetraege.',
+    '- Pflegegrad: Antrag bei der Pflegekasse der Krankenkasse, danach Begutachtung durch den Medizinischen Dienst zuhause. Das Team hilft beim Antrag.',
+    '- Jobs: gesucht werden Pflegefachkraefte mit 3-jaehrigem Examen in Teilzeit sowie auf Minijob-Basis fuer Wochenendtouren. Initiativbewerbungen sind willkommen. Bewerbung ueber die Schnellbewerbung auf der Jobs-Seite oder an info@herz-und-seele.org.',
+    '',
+    'Wenn du etwas nicht weisst, sage das ehrlich und verweise an das Team.'
+  ].join('\n');
+
+  var GREETING='Guten Tag! Ich bin der Pflege-Lotse, ein KI-Assistent (Demo). Ich beantworte allgemeine Fragen zu Pflege, Kosten und Bewerbung. Ich entscheide nichts und ersetze keine Beratung, dafür ist unser Team da. Was möchten Sie wissen?';
+  var FALLBACK='Der Pflege-Lotse ist gerade nicht erreichbar. Rufen Sie uns gern direkt an: 02832 2482.';
+
+  var panel=$('#chatPanel'), msgs=$('#chatMsgs'), input=$('#chatInput'), sendBtn=$('#chatSend');
+  var hist=[], greeted=false, busy=false;
+
+  function openChat(){
+    panel.hidden=false;
+    if(!greeted){addMsg('bot',GREETING);greeted=true;}
+    setTimeout(function(){input.focus()},60);
+  }
+  $('#chatClose').addEventListener('click',function(){panel.hidden=true});
+
+  function addMsg(role,text){
+    var d=document.createElement('div');
+    d.className='msg '+role;
+    d.textContent=text;
+    msgs.appendChild(d);
+    msgs.scrollTop=msgs.scrollHeight;
+    return d;
+  }
+  function addTyping(){
+    var d=document.createElement('div');
+    d.className='msg bot';
+    d.innerHTML='<span class="dots"><i></i><i></i><i></i></span>';
+    msgs.appendChild(d);
+    msgs.scrollTop=msgs.scrollHeight;
+    return d;
+  }
+
+  function send(text){
+    text=(text||'').trim();
+    if(!text||busy){return;}
+    busy=true; sendBtn.disabled=true; input.value='';
+    addMsg('user',text);
+    hist.push({role:'user',content:text});
+    var typing=addTyping();
+
+    fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-6',
+        max_tokens:1000,
+        system:SYSTEM,
+        messages:hist.slice(-16)
+      })
+    }).then(function(r){return r.json()})
+    .then(function(data){
+      var out=(data.content||[]).filter(function(c){return c.type==='text'})
+        .map(function(c){return c.text}).join('\n').trim();
+      typing.remove();
+      if(out){hist.push({role:'assistant',content:out});addMsg('bot',out);}
+      else{addMsg('bot',FALLBACK);}
+    }).catch(function(){
+      typing.remove();
+      addMsg('bot',FALLBACK);
+    }).finally(function(){
+      busy=false; sendBtn.disabled=false; input.focus();
+    });
+  }
+
+  sendBtn.addEventListener('click',function(){send(input.value)});
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){e.preventDefault();send(input.value);}
+  });
+  $$('[data-chip]').forEach(function(c){
+    c.addEventListener('click',function(){send(c.textContent)});
+  });
+})();
+</script>
+</body>
+</html>
